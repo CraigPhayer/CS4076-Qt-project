@@ -18,3 +18,4 @@ const vector<Ingredients> &Food::getIngredients() const {
 void Food::setIngredients(const vector<Ingredients> &ingredients) {
     Food::ingredients = ingredients;
 }
+

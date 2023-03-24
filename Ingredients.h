@@ -18,5 +18,4 @@ string ingredName;
 
 };
 
-
 #endif //RECIPEBOOK_INGREDIENTS_H

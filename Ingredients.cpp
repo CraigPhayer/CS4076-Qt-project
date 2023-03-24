@@ -12,3 +12,4 @@ void Ingredients::setIngredName(const string &ingredName) {
 }
 
 Ingredients::~Ingredients() = default;
+
