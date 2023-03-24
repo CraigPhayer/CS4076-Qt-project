@@ -1,0 +1,9 @@
+C:/Users/sophi/OneDrive - University of Limerick/Uni stuff/C++/CS4076 Prj/RecipeBook/cmake-build-debug/CMakeFiles/RecipeBook.dir
+C:/Users/sophi/OneDrive - University of Limerick/Uni stuff/C++/CS4076 Prj/RecipeBook/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/sophi/OneDrive - University of Limerick/Uni stuff/C++/CS4076 Prj/RecipeBook/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/sophi/OneDrive - University of Limerick/Uni stuff/C++/CS4076 Prj/RecipeBook/cmake-build-debug/CMakeFiles/list_install_components.dir
+C:/Users/sophi/OneDrive - University of Limerick/Uni stuff/C++/CS4076 Prj/RecipeBook/cmake-build-debug/CMakeFiles/install.dir
+C:/Users/sophi/OneDrive - University of Limerick/Uni stuff/C++/CS4076 Prj/RecipeBook/cmake-build-debug/CMakeFiles/install/local.dir
+C:/Users/sophi/OneDrive - University of Limerick/Uni stuff/C++/CS4076 Prj/RecipeBook/cmake-build-debug/CMakeFiles/install/strip.dir
+C:/Users/sophi/OneDrive - University of Limerick/Uni stuff/C++/CS4076 Prj/RecipeBook/cmake-build-debug/CMakeFiles/RecipeBook_autogen_timestamp_deps.dir
+C:/Users/sophi/OneDrive - University of Limerick/Uni stuff/C++/CS4076 Prj/RecipeBook/cmake-build-debug/CMakeFiles/RecipeBook_autogen.dir

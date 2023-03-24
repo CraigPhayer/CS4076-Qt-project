@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-948e665fcc1535771771.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "RecipeBook",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "RecipeBook::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-RecipeBook-Debug-37aea68336199ae4335c.json",
+					"name" : "RecipeBook",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "RecipeBook_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-RecipeBook_autogen-Debug-b3a2953eb2d8ea86d933.json",
+					"name" : "RecipeBook_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "RecipeBook_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-RecipeBook_autogen_timestamp_deps-Debug-39115861c7f8fb7ad18d.json",
+					"name" : "RecipeBook_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/sophi/OneDrive - University of Limerick/Uni stuff/C++/CS4076 Prj/RecipeBook/cmake-build-debug",
+		"source" : "C:/Users/sophi/OneDrive - University of Limerick/Uni stuff/C++/CS4076 Prj/RecipeBook"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}

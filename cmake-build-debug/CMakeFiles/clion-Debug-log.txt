@@ -1,0 +1,5 @@
+C:\Users\sophi\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\223.8617.54\bin\cmake\win\x64\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=C:/Users/sophi/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/ninja/win/x64/ninja.exe -DCMAKE_PREFIX_PATH=C:\Qt\6.4.2\mingw_64\ -G Ninja -S "C:\Users\sophi\OneDrive - University of Limerick\Uni stuff\C++\CS4076 Prj\RecipeBook" -B "C:\Users\sophi\OneDrive - University of Limerick\Uni stuff\C++\CS4076 Prj\RecipeBook\cmake-build-debug"
+-- Could NOT find WrapVulkanHeaders (missing: Vulkan_INCLUDE_DIR) 
+-- Configuring done
+-- Generating done
+-- Build files have been written to: C:/Users/sophi/OneDrive - University of Limerick/Uni stuff/C++/CS4076 Prj/RecipeBook/cmake-build-debug
