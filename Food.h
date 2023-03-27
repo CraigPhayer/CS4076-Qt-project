@@ -9,15 +9,13 @@ using namespace std;
 
 class Food : public Ingredients {
 protected:
-string name;
 vector<Ingredients> ingredients;
+friend class Recipe;
 
 public:
+    Food(const string &name, const vector<Ingredients> &ingredients);
+
     Food(const string &name1, const string &name, const vector<Ingredients> &ingredients);
-
-    const string &getName() const;
-
-    void setName(const string &name);
 
     const vector<Ingredients> &getIngredients() const;
 

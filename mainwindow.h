@@ -17,7 +17,8 @@ public:
 
 private slots:
     void on_actionExit_triggered();
-    void on_pushButton_clicked();
+
+    void on_searchButton_clicked();
 
 private:
     Ui::MainWindow *ui;

@@ -1,5 +1,7 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
+#include <QLineEdit>
+#include "Recipe.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -19,9 +21,9 @@ void MainWindow::on_actionExit_triggered()
     exit(0);
 }
 
-void MainWindow::on_pushButton_clicked()
+void MainWindow::on_searchButton_clicked()
 {
-
+    string temp = ui->lineEdit->text().toStdString();
+    Recipe::searchList(temp);
 }
-
 
