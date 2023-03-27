@@ -17,7 +17,7 @@ set(PROJECT_SOURCES
         mainwindow.cpp
         mainwindow.h
         mainwindow.ui
-        Food.cpp Food.h Ingredients.cpp Ingredients.h Recipe.cpp Recipe.h)
+        Food.cpp Food.h Ingredients.cpp Ingredients.h Recipe.cpp Recipe.h Utility.cpp Utility.h)
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(RecipeBook

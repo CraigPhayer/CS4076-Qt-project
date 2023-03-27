@@ -265,6 +265,18 @@
 			null
 		],
 		[
+			"C:/Users/sophi/OneDrive - University of Limerick/Uni stuff/C++/CS4076 Prj/RecipeBook/Recipe.h",
+			"MU",
+			"EWIEGA46WW/moc_Recipe.cpp",
+			null
+		],
+		[
+			"C:/Users/sophi/OneDrive - University of Limerick/Uni stuff/C++/CS4076 Prj/RecipeBook/Utility.h",
+			"MU",
+			"EWIEGA46WW/moc_Utility.cpp",
+			null
+		],
+		[
 			"C:/Users/sophi/OneDrive - University of Limerick/Uni stuff/C++/CS4076 Prj/RecipeBook/mainwindow.h",
 			"MU",
 			"EWIEGA46WW/moc_mainwindow.cpp",
@@ -348,6 +360,16 @@
 		],
 		[
 			"C:/Users/sophi/OneDrive - University of Limerick/Uni stuff/C++/CS4076 Prj/RecipeBook/Ingredients.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/sophi/OneDrive - University of Limerick/Uni stuff/C++/CS4076 Prj/RecipeBook/Recipe.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/sophi/OneDrive - University of Limerick/Uni stuff/C++/CS4076 Prj/RecipeBook/Utility.cpp",
 			"MU",
 			null
 		],

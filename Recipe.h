@@ -8,15 +8,18 @@ using namespace std;
 
 class Recipe{
 protected:
-    static vector<string> recipeList;
     string name;
     friend class MainWindow;
 public:
+    static vector<string> recipeList;
     Recipe(const string& name,const Food& food);
+    Recipe();
     ~Recipe();
 
     void addToList(const Recipe& recipe);
-    static string searchList(const string& recipe);
+
+    static const vector<string> &getRecipeList() ;
+    //string searchList(const string& recipe);
 
     const string &getName() const;
 };
