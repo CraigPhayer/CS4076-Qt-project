@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>526</width>
+    <width>575</width>
     <height>600</height>
    </rect>
   </property>
@@ -27,13 +27,6 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="3" column="0">
-     <widget class="QLabel" name="label">
-      <property name="text">
-       <string>Search Recipe: </string>
-      </property>
-     </widget>
-    </item>
     <item row="0" column="0" colspan="4" alignment="Qt::AlignTop">
      <widget class="QTextBrowser" name="textBrowser">
       <property name="styleSheet">
@@ -52,10 +45,37 @@ li.checked::marker { content: &quot;\2612&quot;; }
       </property>
      </widget>
     </item>
+    <item row="1" column="3">
+     <widget class="QSlider" name="verticalSlider">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="invertedAppearance">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
     <item row="3" column="2">
      <widget class="QPushButton" name="searchButton">
       <property name="text">
        <string>Search</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QLineEdit" name="lineEdit">
+      <property name="minimumSize">
+       <size>
+        <width>329</width>
+        <height>0</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <widget class="QLabel" name="label">
+      <property name="text">
+       <string>Search Recipe: </string>
       </property>
      </widget>
     </item>
@@ -72,31 +92,11 @@ li.checked::marker { content: &quot;\2612&quot;; }
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>482</width>
-         <height>297</height>
+         <width>526</width>
+         <height>291</height>
         </rect>
        </property>
       </widget>
-     </widget>
-    </item>
-    <item row="3" column="1">
-     <widget class="QLineEdit" name="lineEdit">
-      <property name="minimumSize">
-       <size>
-        <width>329</width>
-        <height>0</height>
-       </size>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="3">
-     <widget class="QSlider" name="verticalSlider">
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
-      </property>
-      <property name="invertedAppearance">
-       <bool>true</bool>
-      </property>
      </widget>
     </item>
    </layout>
@@ -107,7 +107,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>526</width>
+     <width>575</width>
      <height>25</height>
     </rect>
    </property>

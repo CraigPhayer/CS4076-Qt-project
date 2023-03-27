@@ -15,7 +15,7 @@ const vector<Ingredients> &Food::getIngredients() const {
     return ingredients;
 }
 
-void Food::setIngredients(const vector<Ingredients> &ingredients) {
-    Food::ingredients = ingredients;
+void Food::addIngredients(Ingredients &ingredients1) {
+    ingredients.push_back(ingredients1);
 }
 

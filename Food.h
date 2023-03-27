@@ -21,8 +21,7 @@ public:
 
     const vector<Ingredients> &getIngredients() const;
 
-    void setIngredients(const vector<Ingredients> &ingredients);
-
+    void addIngredients(Ingredients &ingredients1);
 
 };
 

@@ -13,9 +13,12 @@
 #include <QtGui/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QGridLayout>
+#include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QScrollArea>
 #include <QtWidgets/QSlider>
 #include <QtWidgets/QStatusBar>
@@ -31,9 +34,12 @@ public:
     QWidget *centralwidget;
     QGridLayout *gridLayout;
     QTextBrowser *textBrowser;
+    QSlider *verticalSlider;
+    QPushButton *pushButton;
+    QLineEdit *lineEdit;
+    QLabel *label;
     QScrollArea *scrollArea;
     QWidget *scrollAreaWidgetContents;
-    QSlider *verticalSlider;
     QStatusBar *statusbar;
     QMenuBar *menubar;
     QMenu *menuMenu;
@@ -42,7 +48,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(460, 600);
+        MainWindow->resize(526, 600);
         MainWindow->setMinimumSize(QSize(300, 600));
         MainWindow->setMaximumSize(QSize(16777215, 16777215));
         actionExit = new QAction(MainWindow);
@@ -56,24 +62,41 @@ public:
         textBrowser->setStyleSheet(QString::fromUtf8("background-color: rgb(117, 120, 120);\n"
 "color: rgb(0, 0, 0);"));
 
-        gridLayout->addWidget(textBrowser, 0, 0, 1, 2, Qt::AlignTop);
-
-        scrollArea = new QScrollArea(centralwidget);
-        scrollArea->setObjectName("scrollArea");
-        scrollArea->setWidgetResizable(true);
-        scrollAreaWidgetContents = new QWidget();
-        scrollAreaWidgetContents->setObjectName("scrollAreaWidgetContents");
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 419, 339));
-        scrollArea->setWidget(scrollAreaWidgetContents);
-
-        gridLayout->addWidget(scrollArea, 1, 0, 1, 1);
+        gridLayout->addWidget(textBrowser, 0, 0, 1, 4, Qt::AlignTop);
 
         verticalSlider = new QSlider(centralwidget);
         verticalSlider->setObjectName("verticalSlider");
         verticalSlider->setOrientation(Qt::Vertical);
         verticalSlider->setInvertedAppearance(true);
 
-        gridLayout->addWidget(verticalSlider, 1, 1, 1, 1);
+        gridLayout->addWidget(verticalSlider, 1, 3, 1, 1);
+
+        pushButton = new QPushButton(centralwidget);
+        pushButton->setObjectName("pushButton");
+
+        gridLayout->addWidget(pushButton, 3, 2, 1, 1);
+
+        lineEdit = new QLineEdit(centralwidget);
+        lineEdit->setObjectName("lineEdit");
+        lineEdit->setMinimumSize(QSize(329, 0));
+
+        gridLayout->addWidget(lineEdit, 3, 1, 1, 1);
+
+        label = new QLabel(centralwidget);
+        label->setObjectName("label");
+
+        gridLayout->addWidget(label, 3, 0, 1, 1);
+
+        scrollArea = new QScrollArea(centralwidget);
+        scrollArea->setObjectName("scrollArea");
+        scrollArea->setAutoFillBackground(false);
+        scrollArea->setWidgetResizable(true);
+        scrollAreaWidgetContents = new QWidget();
+        scrollAreaWidgetContents->setObjectName("scrollAreaWidgetContents");
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 485, 309));
+        scrollArea->setWidget(scrollAreaWidgetContents);
+
+        gridLayout->addWidget(scrollArea, 1, 0, 1, 3);
 
         MainWindow->setCentralWidget(centralwidget);
         statusbar = new QStatusBar(MainWindow);
@@ -81,7 +104,7 @@ public:
         MainWindow->setStatusBar(statusbar);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 460, 21));
+        menubar->setGeometry(QRect(0, 0, 526, 21));
         menuMenu = new QMenu(menubar);
         menuMenu->setObjectName("menuMenu");
         MainWindow->setMenuBar(menubar);
@@ -106,6 +129,8 @@ public:
 "li.checked::marker { content: \"\\2612\"; }\n"
 "</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:48pt;\">Cook Book</span></p></body></html>", nullptr));
+        pushButton->setText(QCoreApplication::translate("MainWindow", "Search", nullptr));
+        label->setText(QCoreApplication::translate("MainWindow", "Search Recipe: ", nullptr));
         menuMenu->setTitle(QCoreApplication::translate("MainWindow", "Menu", nullptr));
     } // retranslateUi
 
