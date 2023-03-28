@@ -6,22 +6,30 @@
 
 using namespace std;
 
-class Recipe{
+class Recipe {
 protected:
     string name;
+
     friend class MainWindow;
+
 public:
     static vector<string> recipeList;
-    Recipe(const string& name,const Food& food);
+
+    Recipe(const string &name, const Food &food);
+
     Recipe();
+
     ~Recipe();
 
-    void addToList(const Recipe& recipe);
+    void addToList(const Recipe &recipe);
 
-    static const vector<string> &getRecipeList() ;
-    //string searchList(const string& recipe);
+    static const vector<string> &getRecipeList();
+
+    const string &getList();
 
     const string &getName() const;
+
+
 };
 
 

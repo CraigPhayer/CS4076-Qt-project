@@ -1,24 +1,19 @@
 #include "Recipe.h"
 #include <algorithm>
-#include <utility>
+#include <sstream>
 
 using namespace std;
 
 vector<string> Recipe::recipeList;
+ostringstream returnRecipe;
 
-Recipe::Recipe(const string& name, const Food &food) : name(name) {
+Recipe::Recipe(const string &name, const Food &food) : name(name) {
 
 }
 
-void Recipe::addToList(const Recipe& recipe) {
+void Recipe::addToList(const Recipe &recipe) {
     recipeList.push_back(recipe.getName());
 }
-
-/*string Recipe::searchList(const string & recipe) {
-    if (any_of(recipeList.begin(),recipeList.end(),compare(recipe))){
-        return recipe;
-    } else return "not working";
-}*/
 
 const string &Recipe::getName() const {
     return name;
@@ -26,6 +21,13 @@ const string &Recipe::getName() const {
 
 Recipe::Recipe() {
 
+}
+
+const string &Recipe::getList() {
+    for(const string& str : recipeList){
+        returnRecipe<<str<<endl;
+    }
+    return returnRecipe.str();
 }
 
 const vector<string> &Recipe::getRecipeList() {

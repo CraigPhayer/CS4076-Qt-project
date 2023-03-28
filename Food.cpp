@@ -4,8 +4,8 @@
 ostringstream returnIngredient;
 
 string Food::getIngredients() const {
-    for (Ingredients i : ingredients) {
-        returnIngredient<<i.getIngredName()<<endl;
+    for (const Ingredients &i: ingredients) {
+        returnIngredient << i.getIngredName() << endl;
     }
     return returnIngredient.str();
 }

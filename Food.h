@@ -4,6 +4,7 @@
 #include <iostream>
 #include <vector>
 #include "Ingredients.h"
+#include <sstream>
 
 using namespace std;
 
