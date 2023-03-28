@@ -19,8 +19,6 @@
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QScrollArea>
-#include <QtWidgets/QSlider>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTextBrowser>
 #include <QtWidgets/QTextEdit>
@@ -33,15 +31,13 @@ class Ui_MainWindow
 public:
     QAction *actionExit;
     QWidget *centralwidget;
-    QGridLayout *gridLayout;
     QTextBrowser *textBrowser;
-    QSlider *verticalSlider;
-    QPushButton *searchButton;
-    QLineEdit *lineEdit;
-    QLabel *label;
-    QScrollArea *scrollArea;
-    QWidget *scrollAreaWidgetContents;
     QTextEdit *textEdit;
+    QWidget *gridLayoutWidget;
+    QGridLayout *gridLayout;
+    QLabel *label;
+    QLineEdit *lineEdit;
+    QPushButton *searchButton;
     QStatusBar *statusbar;
     QMenuBar *menubar;
     QMenu *menuMenu;
@@ -50,58 +46,42 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(575, 600);
+        MainWindow->resize(547, 600);
         MainWindow->setMinimumSize(QSize(300, 600));
         MainWindow->setMaximumSize(QSize(16777215, 16777215));
         actionExit = new QAction(MainWindow);
         actionExit->setObjectName("actionExit");
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
-        gridLayout = new QGridLayout(centralwidget);
-        gridLayout->setObjectName("gridLayout");
         textBrowser = new QTextBrowser(centralwidget);
         textBrowser->setObjectName("textBrowser");
+        textBrowser->setGeometry(QRect(-10, 0, 561, 121));
         textBrowser->setStyleSheet(QString::fromUtf8("background-color: rgb(117, 120, 120);\n"
 "color: rgb(0, 0, 0);"));
+        textEdit = new QTextEdit(centralwidget);
+        textEdit->setObjectName("textEdit");
+        textEdit->setGeometry(QRect(280, 130, 256, 381));
+        gridLayoutWidget = new QWidget(centralwidget);
+        gridLayoutWidget->setObjectName("gridLayoutWidget");
+        gridLayoutWidget->setGeometry(QRect(10, 520, 525, 51));
+        gridLayout = new QGridLayout(gridLayoutWidget);
+        gridLayout->setObjectName("gridLayout");
+        gridLayout->setContentsMargins(0, 0, 0, 0);
+        label = new QLabel(gridLayoutWidget);
+        label->setObjectName("label");
 
-        gridLayout->addWidget(textBrowser, 0, 0, 1, 4, Qt::AlignTop);
+        gridLayout->addWidget(label, 0, 0, 1, 1);
 
-        verticalSlider = new QSlider(centralwidget);
-        verticalSlider->setObjectName("verticalSlider");
-        verticalSlider->setOrientation(Qt::Vertical);
-        verticalSlider->setInvertedAppearance(true);
-
-        gridLayout->addWidget(verticalSlider, 1, 3, 1, 1);
-
-        searchButton = new QPushButton(centralwidget);
-        searchButton->setObjectName("searchButton");
-
-        gridLayout->addWidget(searchButton, 3, 2, 1, 1);
-
-        lineEdit = new QLineEdit(centralwidget);
+        lineEdit = new QLineEdit(gridLayoutWidget);
         lineEdit->setObjectName("lineEdit");
         lineEdit->setMinimumSize(QSize(329, 0));
 
-        gridLayout->addWidget(lineEdit, 3, 1, 1, 1);
+        gridLayout->addWidget(lineEdit, 0, 1, 1, 1);
 
-        label = new QLabel(centralwidget);
-        label->setObjectName("label");
+        searchButton = new QPushButton(gridLayoutWidget);
+        searchButton->setObjectName("searchButton");
 
-        gridLayout->addWidget(label, 3, 0, 1, 1);
-
-        scrollArea = new QScrollArea(centralwidget);
-        scrollArea->setObjectName("scrollArea");
-        scrollArea->setAutoFillBackground(false);
-        scrollArea->setWidgetResizable(true);
-        scrollAreaWidgetContents = new QWidget();
-        scrollAreaWidgetContents->setObjectName("scrollAreaWidgetContents");
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 534, 309));
-        textEdit = new QTextEdit(scrollAreaWidgetContents);
-        textEdit->setObjectName("textEdit");
-        textEdit->setGeometry(QRect(0, -1, 541, 311));
-        scrollArea->setWidget(scrollAreaWidgetContents);
-
-        gridLayout->addWidget(scrollArea, 1, 0, 1, 3);
+        gridLayout->addWidget(searchButton, 0, 2, 1, 1);
 
         MainWindow->setCentralWidget(centralwidget);
         statusbar = new QStatusBar(MainWindow);
@@ -109,7 +89,7 @@ public:
         MainWindow->setStatusBar(statusbar);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 575, 21));
+        menubar->setGeometry(QRect(0, 0, 547, 21));
         menuMenu = new QMenu(menubar);
         menuMenu->setObjectName("menuMenu");
         MainWindow->setMenuBar(menubar);
@@ -134,8 +114,8 @@ public:
 "li.checked::marker { content: \"\\2612\"; }\n"
 "</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:48pt;\">Cook Book</span></p></body></html>", nullptr));
-        searchButton->setText(QCoreApplication::translate("MainWindow", "Search", nullptr));
         label->setText(QCoreApplication::translate("MainWindow", "Search Recipe: ", nullptr));
+        searchButton->setText(QCoreApplication::translate("MainWindow", "Search", nullptr));
         menuMenu->setTitle(QCoreApplication::translate("MainWindow", "Menu", nullptr));
     } // retranslateUi
 

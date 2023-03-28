@@ -2,17 +2,11 @@
 #include "./ui_mainwindow.h"
 #include <QLineEdit>
 #include "Recipe.h"
+#include "error404.h"
+#include <QMessageBox>
 
-/*template <typename T>
-struct compare
-{
-    T key;
-    explicit compare(T str): key(std::move(str)) {}
-
-    bool operator()(T const &r) {
-        return (r == key);
-    }
-};*/
+error404 e = *new error404("Recipe was not found or doesn't exist");
+string recipeReturn;
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -33,16 +27,23 @@ void MainWindow::on_actionExit_triggered()
 
 void MainWindow::on_searchButton_clicked()
 {
-    string temp = ui->lineEdit->text().toStdString();
-    searchList(temp,Recipe::getRecipeList());
-    //ui->scrollArea->setT
+    try {
+        string temp = ui->lineEdit->text().toStdString();
+        searchList(temp,Recipe::getRecipeList());
+        ui->textEdit->setText(QString::fromStdString(recipeReturn));
+    } catch (error404 error) {
+        ui->lineEdit->clear();
+        QMessageBox::information(this, tr("Error 404"), tr("Recipe was not found or doesn't exist"));
+    }
+
+
 
 }
 
-string MainWindow::searchList(const string &str, const vector<string> &vectorS) {
-    if (any_of(vectorS.begin(),vectorS.end(),compare(str))){
-        return str;
-    } else return "not working";
-
+void MainWindow::searchList(const string &str, const vector<string> &vectorS) {
+        if (any_of(vectorS.begin(), vectorS.end(), compare(str))) {
+            recipeReturn = str;
+            return;
+        }
+        throw e;
 }
-

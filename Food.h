@@ -14,6 +14,7 @@ friend class Recipe;
 
 public:
     Food(const string &name, const vector<Ingredients> &ingredients);
+    Food(const string &name);
 
     const vector<Ingredients> &getIngredients() const;
 

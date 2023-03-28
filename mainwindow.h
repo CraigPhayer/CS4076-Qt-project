@@ -23,8 +23,6 @@ class MainWindow : public QMainWindow, public Utility<string>
             return (r == key);
         }
     };
-// compare x
-// x()"Helli"
 public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
@@ -37,7 +35,7 @@ private slots:
 private:
     Ui::MainWindow *ui;
 protected:
-    string searchList(const string& str, const vector<string> &vectorS) override;
+    void searchList(const string& str, const vector<string> &vectorS) override;
 };
 
 #endif // MAINWINDOW_H

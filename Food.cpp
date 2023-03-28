@@ -10,3 +10,7 @@ void Food::addIngredients(Ingredients &ingredients1) {
 
 Food::Food(const string &name, const vector<Ingredients> &ingredients) : Ingredients(name), ingredients(ingredients) {}
 
+Food::Food(const string &name) : Ingredients(name) {
+
+}
+
