@@ -1,11 +1,13 @@
+#include <sstream>
 #include "Food.h"
 
-const vector<Ingredients> &Food::getIngredients() const {
-    return ingredients;
-}
+ostringstream returnIngredient;
 
-void Food::addIngredients(Ingredients &ingredients1) {
-    ingredients.push_back(ingredients1);
+string Food::getIngredients() const {
+    for (Ingredients i : ingredients) {
+        returnIngredient<<i.getIngredName()<<endl;
+    }
+    return returnIngredient.str();
 }
 
 Food::Food(const string &name, const vector<Ingredients> &ingredients) : Ingredients(name), ingredients(ingredients) {}

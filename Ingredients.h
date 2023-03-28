@@ -12,9 +12,11 @@ string ingredName;
     explicit Ingredients(const string &name);
     ~Ingredients();
 
+    void setIngredName(const string &i);
+
     const string &getIngredName() const;
 
-    void setIngredName(const string &ingredName);
+    virtual string getIngredients() const;
 
 };
 

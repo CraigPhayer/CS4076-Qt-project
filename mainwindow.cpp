@@ -9,27 +9,22 @@ error404 e = *new error404("Recipe was not found or doesn't exist");
 string recipeReturn;
 
 MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent)
-    , ui(new Ui::MainWindow)
-{
+        : QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);
 }
 
-MainWindow::~MainWindow()
-{
+MainWindow::~MainWindow() {
     delete ui;
 }
 
-void MainWindow::on_actionExit_triggered()
-{
+void MainWindow::on_actionExit_triggered() {
     exit(0);
 }
 
-void MainWindow::on_searchButton_clicked()
-{
+void MainWindow::on_searchButton_clicked() {
     try {
         string temp = ui->lineEdit->text().toStdString();
-        searchList(temp,Recipe::getRecipeList());
+        searchList(temp, Recipe::getRecipeList());
         ui->textEdit->setText(QString::fromStdString(recipeReturn));
     } catch (error404 error) {
         ui->lineEdit->clear();
@@ -37,13 +32,12 @@ void MainWindow::on_searchButton_clicked()
     }
 
 
-
 }
 
 void MainWindow::searchList(const string &str, const vector<string> &vectorS) {
-        if (any_of(vectorS.begin(), vectorS.end(), compare(str))) {
-            recipeReturn = str;
-            return;
-        }
-        throw e;
+    if (any_of(vectorS.begin(), vectorS.end(), compare(str))) {
+        recipeReturn = str;
+        return;
+    }
+    throw e;
 }

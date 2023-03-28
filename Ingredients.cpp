@@ -3,12 +3,16 @@
 
 Ingredients::Ingredients(const string &name) : ingredName(name) {}
 
-const string &Ingredients::getIngredName() const {
+void Ingredients::setIngredName(const string &i) {
+    Ingredients::ingredName = i;
+}
+
+string Ingredients::getIngredients() const {
     return ingredName;
 }
 
-void Ingredients::setIngredName(const string &ingredName) {
-    Ingredients::ingredName = ingredName;
+const string &Ingredients::getIngredName() const {
+    return ingredName;
 }
 
 Ingredients::~Ingredients() = default;

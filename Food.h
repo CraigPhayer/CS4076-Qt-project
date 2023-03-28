@@ -9,17 +9,16 @@ using namespace std;
 
 class Food : public Ingredients {
 protected:
-vector<Ingredients> ingredients;
-friend class Recipe;
+    vector<Ingredients> ingredients;
+
+    friend class Recipe;
 
 public:
     Food(const string &name, const vector<Ingredients> &ingredients);
+
     Food(const string &name);
 
-    const vector<Ingredients> &getIngredients() const;
-
-    void addIngredients(Ingredients &ingredients1);
-
+    string getIngredients() const override;
 };
 
 
