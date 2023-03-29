@@ -25,7 +25,7 @@ public:
 
     static const vector<string> &getRecipeList();
 
-    const string &getList();
+    static string getList();
 
     const string &getName() const;
 

@@ -23,11 +23,13 @@ Recipe::Recipe() {
 
 }
 
-const string &Recipe::getList() {
+string Recipe::getList() {
+    string temp;
     for(const string& str : recipeList){
         returnRecipe<<str<<endl;
     }
-    return returnRecipe.str();
+    temp = returnRecipe.str();
+    return temp;
 }
 
 const vector<string> &Recipe::getRecipeList() {

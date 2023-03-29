@@ -35,7 +35,7 @@ private slots:
 private:
     Ui::MainWindow *ui;
 protected:
-    void searchList(const string& str, const vector<string> &vectorS) override;
+    string searchList(const string& str, const vector<string> &vectorS) override;
 };
 
 #endif // MAINWINDOW_H
