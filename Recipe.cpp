@@ -7,7 +7,7 @@ using namespace std;
 vector<string> Recipe::recipeList;
 vector<Recipe> Recipe::recipeDifficulty;
 ostringstream returnRecipe;
-ostringstream returnDifficulty;
+
 
 Recipe::Recipe(const string &name, const Food &food, const string &difficulty) : name(name), food(food), difficulty(difficulty) {
 
@@ -37,6 +37,7 @@ const vector<string> &Recipe::getRecipeList() {
 
 const string Recipe::getDifficultyFromList(const int& i) {
     string temp;
+    ostringstream returnDifficulty;
     for(Recipe &r : recipeDifficulty){
         if (r.getDifficulty() == "Hard" && i == 1){
             returnDifficulty<<r.getName()<<endl;
@@ -44,7 +45,7 @@ const string Recipe::getDifficultyFromList(const int& i) {
             returnDifficulty<<r.getName()<<endl;
         }else if(r.getDifficulty() == "Easy" && i == 3){
             returnDifficulty<<r.getName()<<endl;
-        }else returnDifficulty<<r.getName()<<endl;
+        }
     }
     temp = returnDifficulty.str();
     return temp;

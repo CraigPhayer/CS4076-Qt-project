@@ -19,8 +19,10 @@
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QRadioButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTextBrowser>
+#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -37,6 +39,12 @@ public:
     QLineEdit *lineEdit;
     QPushButton *searchButton;
     QLabel *label_2;
+    QWidget *verticalLayoutWidget;
+    QVBoxLayout *verticalLayout;
+    QRadioButton *radioButton_4;
+    QRadioButton *radioButton_3;
+    QRadioButton *radioButton_2;
+    QRadioButton *radioButton;
     QStatusBar *statusbar;
     QMenuBar *menubar;
     QMenu *menuMenu;
@@ -83,6 +91,32 @@ public:
         QFont font;
         font.setPointSize(20);
         label_2->setFont(font);
+        verticalLayoutWidget = new QWidget(centralwidget);
+        verticalLayoutWidget->setObjectName("verticalLayoutWidget");
+        verticalLayoutWidget->setGeometry(QRect(380, 320, 160, 191));
+        verticalLayout = new QVBoxLayout(verticalLayoutWidget);
+        verticalLayout->setObjectName("verticalLayout");
+        verticalLayout->setContentsMargins(0, 0, 0, 0);
+        radioButton_4 = new QRadioButton(verticalLayoutWidget);
+        radioButton_4->setObjectName("radioButton_4");
+
+        verticalLayout->addWidget(radioButton_4);
+
+        radioButton_3 = new QRadioButton(verticalLayoutWidget);
+        radioButton_3->setObjectName("radioButton_3");
+
+        verticalLayout->addWidget(radioButton_3);
+
+        radioButton_2 = new QRadioButton(verticalLayoutWidget);
+        radioButton_2->setObjectName("radioButton_2");
+
+        verticalLayout->addWidget(radioButton_2);
+
+        radioButton = new QRadioButton(verticalLayoutWidget);
+        radioButton->setObjectName("radioButton");
+
+        verticalLayout->addWidget(radioButton);
+
         MainWindow->setCentralWidget(centralwidget);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
@@ -109,6 +143,10 @@ public:
         label->setText(QCoreApplication::translate("MainWindow", "Search Recipe: ", nullptr));
         searchButton->setText(QCoreApplication::translate("MainWindow", "Search", nullptr));
         label_2->setText(QCoreApplication::translate("MainWindow", "Craig's Cooking", nullptr));
+        radioButton_4->setText(QCoreApplication::translate("MainWindow", "Hard", nullptr));
+        radioButton_3->setText(QCoreApplication::translate("MainWindow", "Medium", nullptr));
+        radioButton_2->setText(QCoreApplication::translate("MainWindow", "Easy", nullptr));
+        radioButton->setText(QCoreApplication::translate("MainWindow", "Full list", nullptr));
         menuMenu->setTitle(QCoreApplication::translate("MainWindow", "Menu", nullptr));
     } // retranslateUi
 

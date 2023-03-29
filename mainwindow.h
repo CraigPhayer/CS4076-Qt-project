@@ -37,10 +37,17 @@ private slots:
 
     void on_searchButton_clicked();
 
-    void on_radioButton_4_clicked();
+    void on_radioButton_4_clicked();//HARD
+
+    void on_radioButton_3_clicked();//MEDIUM
+
+    void on_radioButton_2_clicked();//EASY
+
+    void on_radioButton_clicked();//FULL LIST
 private:
     Ui::MainWindow *ui;
 protected:
+
     string searchList(const string& str, const vector<string> &vectorS) override;
 };
 
