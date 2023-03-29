@@ -16,3 +16,5 @@ Food::Food(const string &name) : Ingredients(name) {
 
 }
 
+Food::~Food() = default;
+

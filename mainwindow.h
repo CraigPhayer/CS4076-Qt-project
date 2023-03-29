@@ -20,7 +20,12 @@ class MainWindow : public QMainWindow, public Utility<string>
         explicit compare(T str): key{(str)} {}
 
         bool operator()(T const &r) {
-            return (r == key);
+            //return (r == key);
+            std::string key_lower = key;
+            std::transform(key_lower.begin(), key_lower.end(), key_lower.begin(), [](char c) { return std::tolower(c); });
+            std::string r_lower = r;
+            std::transform(r_lower.begin(), r_lower.end(), r_lower.begin(), [](char c) { return std::tolower(c); });
+            return (r_lower == key_lower);
         }
     };
 public:
@@ -32,6 +37,7 @@ private slots:
 
     void on_searchButton_clicked();
 
+    void on_radioButton_4_clicked();
 private:
     Ui::MainWindow *ui;
 protected:

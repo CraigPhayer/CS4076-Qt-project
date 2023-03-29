@@ -1,16 +1,21 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 #include <QLineEdit>
+#include <QTextBrowser>
 #include "Recipe.h"
 #include "error404.h"
 #include <QMessageBox>
+
+#define HARD 1
+#define MEDIUM 2
+#define EASY 3
 
 error404 e = *new error404("Recipe was not found or doesn't exist");
 
 MainWindow::MainWindow(QWidget *parent)
         : QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);
-    ui->textEdit->setText(QString::fromStdString(Recipe::getList()));
+    ui->textBrowser->setText(QString::fromStdString(Recipe::getRecipeNameList()));
 }
 
 MainWindow::~MainWindow() {
@@ -23,7 +28,7 @@ void MainWindow::on_actionExit_triggered() {
 
 void MainWindow::on_searchButton_clicked() {
     try {
-        ui->textEdit->setText(QString::fromStdString(searchList(ui->lineEdit->text().toStdString(), Recipe::getRecipeList())));
+        ui->textBrowser->setText(QString::fromStdString(searchList(ui->lineEdit->text().toStdString(), Recipe::getRecipeList())));
     } catch (error404 error) {
         ui->lineEdit->clear();
         QMessageBox::information(this, tr("Error 404"), tr("Recipe was not found or doesn't exist"));
@@ -36,3 +41,9 @@ string MainWindow::searchList(const string &str, const vector<string> &vectorS) 
     }
     throw e;
 }
+
+void MainWindow::on_radioButton_4_clicked()
+{
+
+}
+

@@ -19,6 +19,8 @@ public:
 
     Food(const string &name);
 
+    ~Food();
+
     string getIngredients() const override;
 };
 

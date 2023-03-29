@@ -21,7 +21,6 @@
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTextBrowser>
-#include <QtWidgets/QTextEdit>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -32,12 +31,12 @@ public:
     QAction *actionExit;
     QWidget *centralwidget;
     QTextBrowser *textBrowser;
-    QTextEdit *textEdit;
     QWidget *gridLayoutWidget;
     QGridLayout *gridLayout;
     QLabel *label;
     QLineEdit *lineEdit;
     QPushButton *searchButton;
+    QLabel *label_2;
     QStatusBar *statusbar;
     QMenuBar *menubar;
     QMenu *menuMenu;
@@ -48,22 +47,17 @@ public:
             MainWindow->setObjectName("MainWindow");
         MainWindow->resize(547, 600);
         MainWindow->setMinimumSize(QSize(300, 600));
-        MainWindow->setMaximumSize(QSize(16777215, 16777215));
+        MainWindow->setMaximumSize(QSize(547, 600));
         actionExit = new QAction(MainWindow);
         actionExit->setObjectName("actionExit");
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         textBrowser = new QTextBrowser(centralwidget);
         textBrowser->setObjectName("textBrowser");
-        textBrowser->setGeometry(QRect(-10, 0, 561, 121));
-        textBrowser->setStyleSheet(QString::fromUtf8("background-color: rgb(117, 120, 120);\n"
-"color: rgb(0, 0, 0);"));
-        textEdit = new QTextEdit(centralwidget);
-        textEdit->setObjectName("textEdit");
-        textEdit->setGeometry(QRect(280, 130, 256, 381));
+        textBrowser->setGeometry(QRect(0, 320, 371, 192));
         gridLayoutWidget = new QWidget(centralwidget);
         gridLayoutWidget->setObjectName("gridLayoutWidget");
-        gridLayoutWidget->setGeometry(QRect(10, 520, 525, 51));
+        gridLayoutWidget->setGeometry(QRect(0, 520, 371, 31));
         gridLayout = new QGridLayout(gridLayoutWidget);
         gridLayout->setObjectName("gridLayout");
         gridLayout->setContentsMargins(0, 0, 0, 0);
@@ -83,13 +77,19 @@ public:
 
         gridLayout->addWidget(searchButton, 0, 2, 1, 1);
 
+        label_2 = new QLabel(centralwidget);
+        label_2->setObjectName("label_2");
+        label_2->setGeometry(QRect(11, 11, 331, 91));
+        QFont font;
+        font.setPointSize(20);
+        label_2->setFont(font);
         MainWindow->setCentralWidget(centralwidget);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
         MainWindow->setStatusBar(statusbar);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 547, 21));
+        menubar->setGeometry(QRect(0, 0, 547, 25));
         menuMenu = new QMenu(menubar);
         menuMenu->setObjectName("menuMenu");
         MainWindow->setMenuBar(menubar);
@@ -106,16 +106,9 @@ public:
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
         actionExit->setText(QCoreApplication::translate("MainWindow", "Exit", nullptr));
-        textBrowser->setHtml(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:48pt;\">Cook Book</span></p></body></html>", nullptr));
         label->setText(QCoreApplication::translate("MainWindow", "Search Recipe: ", nullptr));
         searchButton->setText(QCoreApplication::translate("MainWindow", "Search", nullptr));
+        label_2->setText(QCoreApplication::translate("MainWindow", "Craig's Cooking", nullptr));
         menuMenu->setTitle(QCoreApplication::translate("MainWindow", "Menu", nullptr));
     } // retranslateUi
 
