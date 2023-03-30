@@ -20,7 +20,7 @@ protected:
 public:
     static vector<string> recipeList;
 
-    static vector<Recipe> recipeDifficulty;
+    static vector<Recipe> recipeVector;
 
     Recipe(const string &name, const Food &food, const string &difficulty);
 
@@ -40,7 +40,11 @@ public:
 
     const string &getName() const;
 
+    const Food &getFood();
 
+    static string getIngredients();
+
+    Recipe();
 };
 
 

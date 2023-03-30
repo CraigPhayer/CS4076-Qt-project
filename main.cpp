@@ -1,15 +1,12 @@
 #include "mainwindow.h"
-
+#include <vector>
 #include <QApplication>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    Food ingredients = *new Food("temp");
-    Recipe r = *new Recipe("Food", ingredients,"Hard");
-    r.addToList(r);
-    
     MainWindow w;
+    w.setup();
     w.show();
     return a.exec();
 }

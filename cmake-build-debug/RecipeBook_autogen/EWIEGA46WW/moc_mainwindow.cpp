@@ -26,7 +26,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 namespace {
 struct qt_meta_stringdata_MainWindow_t {
-    uint offsetsAndSizes[16];
+    uint offsetsAndSizes[18];
     char stringdata0[11];
     char stringdata1[24];
     char stringdata2[1];
@@ -34,7 +34,8 @@ struct qt_meta_stringdata_MainWindow_t {
     char stringdata4[25];
     char stringdata5[25];
     char stringdata6[25];
-    char stringdata7[23];
+    char stringdata7[33];
+    char stringdata8[6];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_MainWindow_t::offsetsAndSizes) + ofs), len 
@@ -47,7 +48,8 @@ Q_CONSTINIT static const qt_meta_stringdata_MainWindow_t qt_meta_stringdata_Main
         QT_MOC_LITERAL(60, 24),  // "on_radioButton_4_clicked"
         QT_MOC_LITERAL(85, 24),  // "on_radioButton_3_clicked"
         QT_MOC_LITERAL(110, 24),  // "on_radioButton_2_clicked"
-        QT_MOC_LITERAL(135, 22)   // "on_radioButton_clicked"
+        QT_MOC_LITERAL(135, 32),  // "on_horizontalSlider_valueChanged"
+        QT_MOC_LITERAL(168, 5)   // "value"
     },
     "MainWindow",
     "on_actionExit_triggered",
@@ -56,7 +58,8 @@ Q_CONSTINIT static const qt_meta_stringdata_MainWindow_t qt_meta_stringdata_Main
     "on_radioButton_4_clicked",
     "on_radioButton_3_clicked",
     "on_radioButton_2_clicked",
-    "on_radioButton_clicked"
+    "on_horizontalSlider_valueChanged",
+    "value"
 };
 #undef QT_MOC_LITERAL
 } // unnamed namespace
@@ -80,7 +83,7 @@ Q_CONSTINIT static const uint qt_meta_data_MainWindow[] = {
        4,    0,   52,    2, 0x08,    3 /* Private */,
        5,    0,   53,    2, 0x08,    4 /* Private */,
        6,    0,   54,    2, 0x08,    5 /* Private */,
-       7,    0,   55,    2, 0x08,    6 /* Private */,
+       7,    1,   55,    2, 0x08,    6 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -88,7 +91,7 @@ Q_CONSTINIT static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void,
+    QMetaType::Void, QMetaType::Int,    8,
 
        0        // eod
 };
@@ -112,8 +115,9 @@ Q_CONSTINIT const QMetaObject MainWindow::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_radioButton_2_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'on_radioButton_clicked'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>
+        // method 'on_horizontalSlider_valueChanged'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<int, std::false_type>
     >,
     nullptr
 } };
@@ -129,11 +133,10 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 2: _t->on_radioButton_4_clicked(); break;
         case 3: _t->on_radioButton_3_clicked(); break;
         case 4: _t->on_radioButton_2_clicked(); break;
-        case 5: _t->on_radioButton_clicked(); break;
+        case 5: _t->on_horizontalSlider_valueChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
         default: ;
         }
     }
-    (void)_a;
 }
 
 const QMetaObject *MainWindow::metaObject() const

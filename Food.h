@@ -8,20 +8,21 @@
 
 using namespace std;
 
-class Food : public Ingredients {
+class Food {
 protected:
-    vector<Ingredients> ingredients;
-
-    friend class Recipe;
+    static vector<Ingredients> ingredients;
+    string name;
 
 public:
-    Food(const string &name, const vector<Ingredients> &ingredients);
+    Food(const string &name, const vector<Ingredients> &ingredients1);
 
     Food(const string &name);
 
+    Food();
+
     ~Food();
 
-    string getIngredients() const override;
+    static const vector<Ingredients> &getIngredients() ;
 };
 
 

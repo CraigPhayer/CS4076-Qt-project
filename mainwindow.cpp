@@ -10,11 +10,15 @@
 #define MEDIUM 2
 #define EASY 3
 
+Food temp = *new Food("temp");
+Recipe r = *new Recipe();
+
 error404 e = *new error404("Recipe was not found or doesn't exist");
 
 MainWindow::MainWindow(QWidget *parent)
         : QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);
+    this->setWindowTitle("Craigslist");
 }
 
 MainWindow::~MainWindow() {
@@ -29,6 +33,8 @@ void MainWindow::on_searchButton_clicked() {
     try {
         ui->textBrowser->clear();
         ui->textBrowser->setText(QString::fromStdString(searchList(ui->lineEdit->text().toStdString(), Recipe::getRecipeList())));
+        ui->textBrowser_2->clear();
+        ui->textBrowser_2->setText(QString::fromStdString(Recipe::getIngredients()));
     } catch (error404 error) {
         ui->lineEdit->clear();
         QMessageBox::information(this, tr("Error 404"), tr("Recipe was not found or doesn't exist"));
@@ -62,10 +68,29 @@ void MainWindow::on_radioButton_2_clicked()//EASY
     ui->textBrowser->setText(QString::fromStdString(Recipe::getDifficultyFromList(EASY)));
 }
 
+void MainWindow::setup() {
+    vector<Ingredients> tempV;
+    Ingredients ingredients1 = *new Ingredients("Pls work");
+    tempV.push_back(ingredients1);
+    Food ingredients = *new Food("tempV", tempV);
+    Recipe r = *new Recipe("Food", ingredients,"Hard");
+    r.addToList(r);
+}
 
-void MainWindow::on_radioButton_clicked()//FULL LIST
+
+void MainWindow::on_horizontalSlider_valueChanged(int value)
 {
-    ui->textBrowser->setText("");
-    ui->textBrowser->setText(QString::fromStdString(Recipe::getRecipeNameList()));
+    /*QColor color(value, value, value);
+
+    this->setStyleSheet(QString("background-color: %1").arg(color.name()));*/
+    ui->horizontalSlider->setRange(0,255);
+
+    int hue = value * 2;
+
+    // Create a QColor object with the calculated hue and full saturation and value
+    QColor color = QColor::fromHsv(hue, 255, 255);
+
+    // Set the background color of the window to the QColor object
+    this->setStyleSheet(QString("background-color: %1").arg(color.name()));
 }
 

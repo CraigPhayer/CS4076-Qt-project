@@ -30,6 +30,7 @@ class MainWindow : public QMainWindow, public Utility<string>
     };
 public:
     explicit MainWindow(QWidget *parent = nullptr);
+    static void setup();
     ~MainWindow();
 
 private slots:
@@ -43,9 +44,10 @@ private slots:
 
     void on_radioButton_2_clicked();//EASY
 
-    void on_radioButton_clicked();//FULL LIST
+    void on_horizontalSlider_valueChanged(int value);
 private:
     Ui::MainWindow *ui;
+
 protected:
 
     string searchList(const string& str, const vector<string> &vectorS) override;
