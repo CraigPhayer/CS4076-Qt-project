@@ -31,8 +31,9 @@ void MainWindow::on_actionExit_triggered() {
 
 void MainWindow::on_searchButton_clicked() {
     try {
+        searchList(ui->lineEdit->text().toStdString(), Recipe::getRecipeList());
         ui->textBrowser->clear();
-        ui->textBrowser->setText(QString::fromStdString(searchList(ui->lineEdit->text().toStdString(), Recipe::getRecipeList())));
+        ui->textBrowser->setText(QString::fromStdString(r.instructionsGlobal));
         ui->textBrowser_2->clear();
         ui->textBrowser_2->setText(QString::fromStdString(Recipe::getIngredients()));
     } catch (error404 error) {
@@ -70,10 +71,11 @@ void MainWindow::on_radioButton_2_clicked()//EASY
 
 void MainWindow::setup() {
     vector<Ingredients> tempV;
-    Ingredients ingredients1 = *new Ingredients("Pls work");
+    string basicString = "pls. work. thank. you.";
+    Ingredients ingredients1 = *new Ingredients(basicString);
     tempV.push_back(ingredients1);
     Food ingredients = *new Food("tempV", tempV);
-    Recipe r = *new Recipe("Food", ingredients,"Hard");
+    Recipe r = *new Recipe("Food", ingredients, "Hard", 4, basicString);
     r.addToList(r);
 }
 

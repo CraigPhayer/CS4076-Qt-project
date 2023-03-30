@@ -9,11 +9,18 @@ using namespace std;
 
 class Recipe {
 protected:
+
     string name;
 
     Food food;
 
     string difficulty;
+
+    int instructionsSteps;
+
+    string instructions;
+
+    static string instructionsGlobal;
 
     friend class MainWindow;
 
@@ -22,7 +29,7 @@ public:
 
     static vector<Recipe> recipeVector;
 
-    Recipe(const string &name, const Food &food, const string &difficulty);
+    Recipe(const string &name, const Food &food, const string &difficulty,const int& n, const string &instructions );
 
     ~Recipe();
 
@@ -32,11 +39,15 @@ public:
 
     static const string getDifficultyFromList(const int &i);
 
+    const string &getInstructionString();
+
     const string &getDifficulty() const;
 
     static const vector<string> &getRecipeList();
 
     static string getRecipeNameList();
+
+    int getInstructions() const;
 
     const string &getName() const;
 
@@ -45,6 +56,8 @@ public:
     static string getIngredients();
 
     Recipe();
+
+    void appendInstructions(const string &input, int n);
 };
 
 

@@ -7,10 +7,13 @@ using namespace std;
 vector<string> Recipe::recipeList;
 vector<Recipe> Recipe::recipeVector;
 ostringstream returnRecipe;
+string Recipe::instructionsGlobal;
 
 
-Recipe::Recipe(const string &name, const Food &food, const string &difficulty) : name(name), food(food), difficulty(difficulty) {
-
+Recipe::Recipe(const string &name, const Food &food, const string &difficulty, const int &n, const string &instructions)
+        : name(name), food(food), difficulty(difficulty),
+          instructionsSteps(n), instructions(instructions) {
+    appendInstructions(instructions,n);
 }
 
 void Recipe::addToList(const Recipe &recipe) {
@@ -24,8 +27,8 @@ const string &Recipe::getName() const {
 
 string Recipe::getRecipeNameList() {
     string temp;
-    for(const string& str : recipeList){
-        returnRecipe<<str<<endl;
+    for (const string &str: recipeList) {
+        returnRecipe << str << endl;
     }
     temp = returnRecipe.str();
     return temp;
@@ -35,16 +38,16 @@ const vector<string> &Recipe::getRecipeList() {
     return recipeList;
 }
 
-const string Recipe::getDifficultyFromList(const int& i) {
+const string Recipe::getDifficultyFromList(const int &i) {
     string temp;
     ostringstream returnDifficulty;
-    for(Recipe &r : recipeVector){
-        if (r.getDifficulty() == "Hard" && i == 1){
-            returnDifficulty<<r.getName()<<endl;
-        } else if(r.getDifficulty() == "Medium" && i == 2){
-            returnDifficulty<<r.getName()<<endl;
-        }else if(r.getDifficulty() == "Easy" && i == 3){
-            returnDifficulty<<r.getName()<<endl;
+    for (Recipe &r: recipeVector) {
+        if (r.getDifficulty() == "Hard" && i == 1) {
+            returnDifficulty << r.getName() << endl;
+        } else if (r.getDifficulty() == "Medium" && i == 2) {
+            returnDifficulty << r.getName() << endl;
+        } else if (r.getDifficulty() == "Easy" && i == 3) {
+            returnDifficulty << r.getName() << endl;
         }
     }
     temp = returnDifficulty.str();
@@ -63,7 +66,7 @@ const Food &Recipe::getFood() {
     return food;
 }
 
-string Recipe::getIngredients(){
+string Recipe::getIngredients() {
     ostringstream returnIngredient;
     string temp;
     for (const Ingredients &i: Food::getIngredients()) {
@@ -73,8 +76,35 @@ string Recipe::getIngredients(){
     return temp;
 }
 
-Recipe::Recipe() {
+Recipe::Recipe() = default;
 
+void Recipe::appendInstructions(const string &input, int n) {
+    string::size_type pos = 0;
+    string output;
+    for (int i = 0; i < n; ++i) {
+        output += "Step " + to_string(i+1) + ": ";
+        while (pos < input.length()){
+            output += input[pos];
+            if (input[pos] == '.'){
+                output += "\n";
+                ++pos;
+                break;
+            }
+            ++pos;
+        }
+        if (pos == input.length())
+            pos = 0;
+        output += "\n";
+    }
+    instructionsGlobal = output;
+}
+
+int Recipe::getInstructions() const {
+    return instructionsSteps;
+}
+
+const string &Recipe::getInstructionString() {
+    return instructions;
 }
 
 

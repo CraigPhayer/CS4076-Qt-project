@@ -61,9 +61,9 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(610, 610);
-        MainWindow->setMinimumSize(QSize(610, 610));
-        MainWindow->setMaximumSize(QSize(610, 610));
+        MainWindow->resize(810, 810);
+        MainWindow->setMinimumSize(QSize(810, 810));
+        MainWindow->setMaximumSize(QSize(810, 810));
         actionExit = new QAction(MainWindow);
         actionExit->setObjectName("actionExit");
         centralwidget = new QWidget(MainWindow);
@@ -76,7 +76,7 @@ public:
         label_2->setFont(font);
         verticalLayoutWidget = new QWidget(centralwidget);
         verticalLayoutWidget->setObjectName("verticalLayoutWidget");
-        verticalLayoutWidget->setGeometry(QRect(10, 250, 591, 311));
+        verticalLayoutWidget->setGeometry(QRect(10, 350, 631, 411));
         verticalLayout = new QVBoxLayout(verticalLayoutWidget);
         verticalLayout->setObjectName("verticalLayout");
         verticalLayout->setContentsMargins(0, 0, 0, 0);
@@ -143,7 +143,7 @@ public:
         label_3 = new QLabel(verticalLayoutWidget);
         label_3->setObjectName("label_3");
 
-        gridLayout_2->addWidget(label_3, 0, 0, 1, 1);
+        gridLayout_2->addWidget(label_3, 0, 0, 1, 1, Qt::AlignHCenter);
 
 
         gridLayout->addLayout(gridLayout_2, 0, 1, 1, 1);
@@ -153,7 +153,7 @@ public:
         label_5 = new QLabel(verticalLayoutWidget);
         label_5->setObjectName("label_5");
 
-        gridLayout_3->addWidget(label_5, 0, 0, 1, 1);
+        gridLayout_3->addWidget(label_5, 0, 0, 1, 1, Qt::AlignHCenter);
 
 
         gridLayout->addLayout(gridLayout_3, 0, 2, 1, 1);
@@ -171,7 +171,7 @@ public:
         MainWindow->setStatusBar(statusbar);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 610, 25));
+        menubar->setGeometry(QRect(0, 0, 810, 21));
         menuMenu = new QMenu(menubar);
         menuMenu->setObjectName("menuMenu");
         MainWindow->setMenuBar(menubar);
@@ -195,8 +195,8 @@ public:
         searchButton->setText(QCoreApplication::translate("MainWindow", "Search", nullptr));
         label->setText(QCoreApplication::translate("MainWindow", "Search Recipe: ", nullptr));
         label_4->setText(QCoreApplication::translate("MainWindow", "    Difficulty", nullptr));
-        label_3->setText(QCoreApplication::translate("MainWindow", "                                 Recipe List", nullptr));
-        label_5->setText(QCoreApplication::translate("MainWindow", "         Ingredients", nullptr));
+        label_3->setText(QCoreApplication::translate("MainWindow", "Recipe List", nullptr));
+        label_5->setText(QCoreApplication::translate("MainWindow", "Ingredients", nullptr));
         menuMenu->setTitle(QCoreApplication::translate("MainWindow", "Menu", nullptr));
     } // retranslateUi
 
