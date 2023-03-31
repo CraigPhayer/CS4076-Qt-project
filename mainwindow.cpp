@@ -14,7 +14,7 @@
 #define MEDIUM 2
 #define EASY 3
 
-Food temp = *new Food("temp");
+Food temp = *new Food();
 Recipe r = *new Recipe();
 
 error404 e = *new error404("Recipe was not found or doesn't exist");
@@ -112,7 +112,7 @@ void MainWindow::setup() {
                                " Serve the croissants warm or at room temperature.";
     croissantsIngredients.push_back(cross2);
     Food crossIngred = *new Food("croissantsIngredients",croissantsIngredients);
-    Recipe Croissants = *new Recipe("Croissants",crossIngred.getIngredients(),"Hard",7, instructionsCross);
+    Recipe Croissants = *new Recipe("Croissants", formatString(crossIngred.getIngredients()),"Hard",7, instructionsCross);
     Croissants.addToList(Croissants);
     /*Ingredients cross3 = cross1; cross3.setIngredName("80g sugar"); croissantsIngredients.push_back(cross3);
     Ingredients cross4 = cross1; cross4.setIngredName(""); croissantsIngredients.push_back(cross4);
@@ -252,5 +252,26 @@ void MainWindow::on_orangeBox_stateChanged(int arg1) {
         this->setPalette(background);
     }
     windowColour();
+}
+
+string MainWindow::formatString(const string &str) {
+    string output;
+
+    string::size_type pos = 0;
+    for (int i = 0; i < str.length(); ++i) {
+        while (pos < str.length()){
+            output += str[pos];
+            if (str[pos] == '.'){
+                output += "\n";
+                ++pos;
+                break;
+            }
+            ++pos;
+        }
+        if (pos == str.length())
+            pos = 0;
+        output += "\n";
+    }
+    return output;
 }
 

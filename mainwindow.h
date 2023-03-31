@@ -30,7 +30,7 @@ class MainWindow : public QMainWindow, public Utility<string>
     };
 public:
     explicit MainWindow(QWidget *parent = nullptr);
-    static void setup();
+    void setup();
     ~MainWindow();
 
 private slots:
@@ -63,7 +63,7 @@ private slots:
     void on_orangeBox_stateChanged(int arg1);
 private:
     Ui::MainWindow *ui;
-
+    string formatString(const string &str) override;
 protected:
 
     string searchList(const string& str, const vector<string> &vectorS) override;
