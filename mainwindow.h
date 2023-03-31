@@ -44,7 +44,21 @@ private slots:
 
     void on_radioButton_2_clicked();//EASY
 
-    void on_horizontalSlider_valueChanged(int value);
+    void on_verticalSlider_valueChanged(int value);
+
+    void windowColour();
+
+    void on_greenBox_stateChanged(int arg1);
+
+    void on_blueBox_stateChanged(int arg1);
+
+    void on_redBox_stateChanged(int arg1);
+
+    void on_resetBox_stateChanged(int arg1);
+
+    void on_purpleBox_stateChanged(int arg1);
+
+    void on_orangeBox_stateChanged(int arg1);
 private:
     Ui::MainWindow *ui;
 

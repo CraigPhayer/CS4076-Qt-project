@@ -12,7 +12,9 @@
 #include <QtCore/QVariant>
 #include <QtGui/QAction>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QCheckBox>
 #include <QtWidgets/QGridLayout>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
@@ -52,7 +54,19 @@ public:
     QLabel *label_3;
     QGridLayout *gridLayout_3;
     QLabel *label_5;
-    QSlider *horizontalSlider;
+    QWidget *gridLayoutWidget;
+    QGridLayout *gridLayout_8;
+    QLabel *label_7;
+    QSlider *verticalSlider;
+    QWidget *gridLayoutWidget_2;
+    QGridLayout *gridLayout_4;
+    QCheckBox *redBox;
+    QCheckBox *greenBox;
+    QCheckBox *blueBox;
+    QHBoxLayout *horizontalLayout;
+    QCheckBox *purpleBox;
+    QCheckBox *resetBox;
+    QCheckBox *orangeBox;
     QStatusBar *statusbar;
     QMenuBar *menubar;
     QMenu *menuMenu;
@@ -161,17 +175,73 @@ public:
 
         verticalLayout->addLayout(gridLayout);
 
-        horizontalSlider = new QSlider(centralwidget);
-        horizontalSlider->setObjectName("horizontalSlider");
-        horizontalSlider->setGeometry(QRect(420, 20, 160, 18));
-        horizontalSlider->setOrientation(Qt::Horizontal);
+        gridLayoutWidget = new QWidget(centralwidget);
+        gridLayoutWidget->setObjectName("gridLayoutWidget");
+        gridLayoutWidget->setGeometry(QRect(650, 350, 160, 411));
+        gridLayout_8 = new QGridLayout(gridLayoutWidget);
+        gridLayout_8->setObjectName("gridLayout_8");
+        gridLayout_8->setContentsMargins(0, 0, 0, 0);
+        label_7 = new QLabel(gridLayoutWidget);
+        label_7->setObjectName("label_7");
+
+        gridLayout_8->addWidget(label_7, 0, 0, 1, 1, Qt::AlignHCenter);
+
+        verticalSlider = new QSlider(gridLayoutWidget);
+        verticalSlider->setObjectName("verticalSlider");
+        verticalSlider->setAutoFillBackground(false);
+        verticalSlider->setOrientation(Qt::Vertical);
+        verticalSlider->setInvertedAppearance(true);
+
+        gridLayout_8->addWidget(verticalSlider, 1, 0, 1, 1, Qt::AlignHCenter);
+
+        gridLayoutWidget_2 = new QWidget(centralwidget);
+        gridLayoutWidget_2->setObjectName("gridLayoutWidget_2");
+        gridLayoutWidget_2->setGeometry(QRect(480, 180, 321, 161));
+        gridLayout_4 = new QGridLayout(gridLayoutWidget_2);
+        gridLayout_4->setObjectName("gridLayout_4");
+        gridLayout_4->setContentsMargins(0, 0, 0, 0);
+        redBox = new QCheckBox(gridLayoutWidget_2);
+        redBox->setObjectName("redBox");
+
+        gridLayout_4->addWidget(redBox, 0, 0, 1, 1);
+
+        greenBox = new QCheckBox(gridLayoutWidget_2);
+        greenBox->setObjectName("greenBox");
+
+        gridLayout_4->addWidget(greenBox, 2, 0, 1, 1);
+
+        blueBox = new QCheckBox(gridLayoutWidget_2);
+        blueBox->setObjectName("blueBox");
+
+        gridLayout_4->addWidget(blueBox, 1, 0, 1, 1);
+
+        horizontalLayout = new QHBoxLayout();
+        horizontalLayout->setObjectName("horizontalLayout");
+        purpleBox = new QCheckBox(gridLayoutWidget_2);
+        purpleBox->setObjectName("purpleBox");
+
+        horizontalLayout->addWidget(purpleBox);
+
+
+        gridLayout_4->addLayout(horizontalLayout, 1, 1, 1, 1);
+
+        resetBox = new QCheckBox(gridLayoutWidget_2);
+        resetBox->setObjectName("resetBox");
+
+        gridLayout_4->addWidget(resetBox, 0, 1, 1, 1);
+
+        orangeBox = new QCheckBox(gridLayoutWidget_2);
+        orangeBox->setObjectName("orangeBox");
+
+        gridLayout_4->addWidget(orangeBox, 2, 1, 1, 1);
+
         MainWindow->setCentralWidget(centralwidget);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
         MainWindow->setStatusBar(statusbar);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 810, 21));
+        menubar->setGeometry(QRect(0, 0, 810, 25));
         menuMenu = new QMenu(menubar);
         menuMenu->setObjectName("menuMenu");
         MainWindow->setMenuBar(menubar);
@@ -197,6 +267,13 @@ public:
         label_4->setText(QCoreApplication::translate("MainWindow", "    Difficulty", nullptr));
         label_3->setText(QCoreApplication::translate("MainWindow", "Recipe List", nullptr));
         label_5->setText(QCoreApplication::translate("MainWindow", "Ingredients", nullptr));
+        label_7->setText(QCoreApplication::translate("MainWindow", "Gradient Slider", nullptr));
+        redBox->setText(QCoreApplication::translate("MainWindow", "Red", nullptr));
+        greenBox->setText(QCoreApplication::translate("MainWindow", "Green", nullptr));
+        blueBox->setText(QCoreApplication::translate("MainWindow", "Blue", nullptr));
+        purpleBox->setText(QCoreApplication::translate("MainWindow", "Purple", nullptr));
+        resetBox->setText(QCoreApplication::translate("MainWindow", "Gradient", nullptr));
+        orangeBox->setText(QCoreApplication::translate("MainWindow", "Orange", nullptr));
         menuMenu->setTitle(QCoreApplication::translate("MainWindow", "Menu", nullptr));
     } // retranslateUi
 

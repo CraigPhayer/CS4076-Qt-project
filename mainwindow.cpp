@@ -5,6 +5,9 @@
 #include "Recipe.h"
 #include "error404.h"
 #include <QMessageBox>
+#include <QPalette>
+#include <QBrush>
+#include <QWidget>
 
 #define HARD 1
 #define MEDIUM 2
@@ -80,19 +83,105 @@ void MainWindow::setup() {
 }
 
 
-void MainWindow::on_horizontalSlider_valueChanged(int value)
+void MainWindow::on_verticalSlider_valueChanged(int value)
 {
-    /*QColor color(value, value, value);
+    if(ui->resetBox->isChecked()){
+        this->setStyleSheet("background-color: ;");
+        ui->verticalSlider->setRange(0,255);
+        QColor color1(255 - value, value, 0);
+        QColor color2(value, 0, 255 - value);
 
-    this->setStyleSheet(QString("background-color: %1").arg(color.name()));*/
-    ui->horizontalSlider->setRange(0,255);
+        QLinearGradient gradient(0, 0, 0, this->height());
+        gradient.setColorAt(0, color1);
+        gradient.setColorAt(1, color2);
 
-    int hue = value * 2;
-
-    // Create a QColor object with the calculated hue and full saturation and value
-    QColor color = QColor::fromHsv(hue, 255, 255);
-
-    // Set the background color of the window to the QColor object
-    this->setStyleSheet(QString("background-color: %1").arg(color.name()));
+        QPalette palette;
+        palette.setBrush(QPalette::Window, QBrush(gradient));
+        this->setPalette(palette);
+        this->setAutoFillBackground(true);
+    }
 }
 
+void MainWindow::windowColour(){
+
+    if (!ui->redBox->isChecked() && !ui->resetBox->isChecked() && !ui->greenBox->isChecked() && !ui->blueBox->isChecked()
+        && !ui->purpleBox->isChecked()
+        && !ui->orangeBox->isChecked()){
+        this->setStyleSheet("background-color: white;");
+    }
+}
+
+
+void MainWindow::on_greenBox_stateChanged(int arg1)
+{
+    if (ui->greenBox->isChecked()){
+        ui->purpleBox->setChecked(false);
+        ui->orangeBox->setChecked(false);
+        ui->redBox->setChecked(false);
+        ui->blueBox->setChecked(false);
+        ui->resetBox->setChecked(false);
+        this->setStyleSheet("background-color: green;");
+    }
+}
+
+
+void MainWindow::on_blueBox_stateChanged(int arg1)
+{
+    if (ui->blueBox->isChecked()){
+        ui->purpleBox->setChecked(false);
+        ui->orangeBox->setChecked(false);
+        ui->redBox->setChecked(false);
+        ui->greenBox->setChecked(false);
+        ui->resetBox->setChecked(false);
+        this->setStyleSheet("background-color: blue;");
+    }
+}
+
+
+void MainWindow::on_redBox_stateChanged(int arg1)
+{
+    if (ui->redBox->isChecked()){
+        ui->purpleBox->setChecked(false);
+        ui->orangeBox->setChecked(false);
+        ui->blueBox->setChecked(false);
+        ui->greenBox->setChecked(false);
+        ui->resetBox->setChecked(false);
+        this->setStyleSheet("background-color: red;");
+    }
+}
+
+
+void MainWindow::on_resetBox_stateChanged(int arg1)
+{
+    if(ui->resetBox->isChecked()){
+        ui->purpleBox->setChecked(false);
+        ui->orangeBox->setChecked(false);
+        ui->blueBox->setChecked(false);
+        ui->greenBox->setChecked(false);
+        ui->redBox->setChecked(false);
+        windowColour();
+    }
+}
+
+
+void MainWindow::on_purpleBox_stateChanged(int arg1) {
+    if (ui->purpleBox->isChecked()) {
+        ui->orangeBox->setChecked(false);
+        ui->redBox->setChecked(false);
+        ui->blueBox->setChecked(false);
+        ui->greenBox->setChecked(false);
+        ui->resetBox->setChecked(false);
+        this->setStyleSheet("background-color: purple;");
+    }
+}
+
+void MainWindow::on_orangeBox_stateChanged(int arg1) {
+    if (ui->orangeBox->isChecked()) {
+        ui->purpleBox->setChecked(false);
+        ui->redBox->setChecked(false);
+        ui->blueBox->setChecked(false);
+        ui->greenBox->setChecked(false);
+        ui->resetBox->setChecked(false);
+        this->setStyleSheet("background-color: orange;");
+    }
+}
