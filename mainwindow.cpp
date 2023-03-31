@@ -16,6 +16,7 @@
 
 Food temp = *new Food();
 Recipe r = *new Recipe();
+Ingredients i = *new Ingredients();
 
 error404 e = *new error404("Recipe was not found or doesn't exist");
 
@@ -45,7 +46,7 @@ void MainWindow::on_searchButton_clicked() {
         ui->textBrowser->clear();
         ui->textBrowser->setText(QString::fromStdString(r.instructionsGlobal));
         ui->textBrowser_2->clear();
-        ui->textBrowser_2->setText(QString::fromStdString(Recipe::getIngredients()));
+        ui->textBrowser_2->setText(QString::fromStdString(r.getIngredients()));
     } catch (error404 error) {
         ui->lineEdit->clear();
         QMessageBox::information(this, tr("Error 404"), tr("Recipe was not found or doesn't exist"));
@@ -63,6 +64,8 @@ string MainWindow::searchList(const string &str, const vector<string> &vectorS) 
 void MainWindow::on_radioButton_4_clicked()//HARD
 {
     ui->textBrowser->setText("");
+    ui->textBrowser_2->setText("");
+    ui->lineEdit->setText("");
     ui->textBrowser->setText(QString::fromStdString(Recipe::getDifficultyFromList(HARD)));
 }
 
@@ -70,12 +73,16 @@ void MainWindow::on_radioButton_4_clicked()//HARD
 void MainWindow::on_radioButton_3_clicked()//MEDIUM
 {
     ui->textBrowser->setText("");
+    ui->textBrowser_2->setText("");
+    ui->lineEdit->setText("");
     ui->textBrowser->setText(QString::fromStdString(Recipe::getDifficultyFromList(MEDIUM)));
 }
 
 void MainWindow::on_radioButton_2_clicked()//EASY
 {
     ui->textBrowser->setText("");
+    ui->textBrowser_2->setText("");
+    ui->lineEdit->setText("");
     ui->textBrowser->setText(QString::fromStdString(Recipe::getDifficultyFromList(EASY)));
 }
 
@@ -93,7 +100,7 @@ void MainWindow::setup() {
     vector<Ingredients> croissantsIngredients;
     Ingredients cross1 = *new Ingredients("500g all-purpose flour");
     Ingredients cross2 = cross1;
-    cross2.setIngredName("500g all-purpose flour. 10g salt. 80g sugar. 10g instant yeast. 300ml cold milk. 250g unsalted butter, at room temperature. 1 egg beaten with 1 tablespoon of water, for egg wash");
+    cross2.setIngredName("500g all-purpose flour.\n 10g salt. 80g sugar.\n 10g instant yeast.\n 300ml cold milk.\n 250g unsalted butter, at room temperature.\n 1 egg beaten with 1 tablespoon of water, for egg wash");
     string instructionsCross = "In a large mixing bowl, whisk together the flour, salt, sugar, and instant yeast."
                                " Add in the cold milk and mix until a dough forms."
                                " Knead the dough by hand for 10 minutes or use a stand mixer with a dough hook attachment for 5-7 minutes until the dough is smooth and elastic."
@@ -112,22 +119,50 @@ void MainWindow::setup() {
                                " Serve the croissants warm or at room temperature.";
     croissantsIngredients.push_back(cross2);
     Food crossIngred = *new Food("croissantsIngredients",croissantsIngredients);
-    Recipe Croissants = *new Recipe("Croissants", formatString(crossIngred.getIngredients()),"Hard",7, instructionsCross);
+    Recipe Croissants = *new Recipe("Croissants",crossIngred.getIngredients(),"Hard",7, instructionsCross);
     Croissants.addToList(Croissants);
-    /*Ingredients cross3 = cross1; cross3.setIngredName("80g sugar"); croissantsIngredients.push_back(cross3);
-    Ingredients cross4 = cross1; cross4.setIngredName(""); croissantsIngredients.push_back(cross4);
-    Ingredients cross5 = cross1; cross5.setIngredName("10g salt"); croissantsIngredients.push_back(cross5);
-    Ingredients cross6 = cross1; cross6.setIngredName("10g salt"); croissantsIngredients.push_back(cross6);
-    Ingredients cross7 = cross1; cross7.setIngredName("10g salt"); croissantsIngredients.push_back(cross7);*/
 
-    string croissantsI3 = "80g sugar";
-    string croissantsI4 = "10g instant yeast";
-    string croissantsI5 = "300ml cold milk";
-    string croissantsI6 = "250g unsalted butter, at room temperature";
-    string croissantsI7 = "250g unsalted butter, at room temperature. 1 egg beaten with 1 tablespoon of water, for egg wash";
+    vector<Ingredients> ChickenP;
+    Ingredients chickenPIngred = *new Ingredients("4 boneless, skinless chicken breasts.\n "
+                                                  "Salt and black pepper.\n "
+                                                  "1 cup all-purpose flour.\n"
+                                                  "3 large eggs, beaten.\n "
+                                                  "2 cups panko breadcrumbs.\n "
+                                                  "1/2 cup grated Parmesan cheese.\n "
+                                                  "1/4 cup chopped fresh parsley leaves.\n "
+                                                  "2 cups marinara sauce.\n "
+                                                  "8 ounces fresh mozzarella cheese, sliced.\n "
+                                                  "Olive oil, for frying.\n "
+                                                  "1 pound spaghetti, cooked according to package instructions");
+    ChickenP.push_back(chickenPIngred);
+    string instructionsChickenP = "Preheat the oven to 375°F."
+                                  "Place the chicken breasts between two sheets of plastic wrap and pound them with a meat mallet until they are of an even thickness. Season the chicken with salt and black pepper."
+                                  "Set up three shallow dishes: one with flour, one with beaten eggs, and one with a mixture of panko breadcrumbs, Parmesan cheese, and chopped parsley."
+                                  "Dredge each chicken breast in flour, shaking off any excess. Dip the chicken in the beaten eggs, and then coat with the breadcrumb mixture, pressing it onto the chicken to adhere."
+                                  "Heat about 1/4 inch of olive oil in a large skillet over medium-high heat. When the oil is hot, add the chicken breasts and cook until golden brown and cooked through, about 3-4 minutes per side."
+                                  "Transfer the chicken to a baking dish. Top each chicken breast with a few spoonfuls of marinara sauce, and then add slices of mozzarella cheese on top."
+                                  "Bake in the preheated oven for 15-20 minutes, or until the cheese is melted and bubbly."
+                                  "While the chicken is baking, cook the spaghetti according to package instructions."
+                                  "To serve, place a chicken breast on a plate with some of the melted mozzarella cheese and marinara sauce. Serve with spaghetti on the side.";
+    Food chickP = *new Food("ChickenP",ChickenP);
+    Recipe chickenParmesan = *new Recipe("Chicken Parmesan",chickP.getIngredients(),"Medium",9,instructionsChickenP);
+    chickenParmesan.addToList(chickenParmesan);
 
-
-
+    vector<Ingredients> eggs;
+    Ingredients eggsIngred = *new Ingredients("2 large eggs\n"
+                                              "1 tablespoon milk\n"
+                                              "Salt and black pepper\n"
+                                              "1 tablespoon unsalted butter");
+    eggs.push_back(eggsIngred);
+    string instructionsEggs = "Crack the eggs into a bowl and whisk together with the milk. Add a pinch of salt and black pepper and whisk again."
+                              "Melt the butter in a non-stick skillet over medium heat."
+                              "Pour the egg mixture into the skillet and let it sit for a few seconds to start to set."
+                              "Using a spatula, gently scramble the eggs by stirring them around the skillet until they are cooked to your desired level of doneness."
+                              "Season with additional salt and black pepper to taste."
+                              "Serve the scrambled eggs hot with toast, bacon, or other breakfast sides of your choice.";
+    Food egg = *new Food("Scrambled eggs",eggs);
+    Recipe scrambledEggs = *new Recipe("Scrambled eggs",egg.getIngredients(),"Easy",6,instructionsEggs);
+    scrambledEggs.addToList(scrambledEggs);
 
 
 

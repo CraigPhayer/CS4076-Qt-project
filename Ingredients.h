@@ -7,7 +7,9 @@ using namespace std;
 
 class Ingredients {
 public:
-string ingredName;
+    Ingredients();
+
+    string ingredName;
 
     explicit Ingredients(const string &name);
     ~Ingredients();

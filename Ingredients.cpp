@@ -11,9 +11,11 @@ string Ingredients::getIngredients() const {
     return ingredName;
 }
 
-const string &Ingredients::getIngredName() const {
+const string & Ingredients::getIngredName() const {
     return ingredName;
 }
+
+Ingredients::Ingredients() = default;
 
 Ingredients::~Ingredients() = default;
 
