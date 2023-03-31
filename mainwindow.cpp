@@ -107,7 +107,9 @@ void MainWindow::windowColour(){
     if (!ui->redBox->isChecked() && !ui->resetBox->isChecked() && !ui->greenBox->isChecked() && !ui->blueBox->isChecked()
         && !ui->purpleBox->isChecked()
         && !ui->orangeBox->isChecked()){
-        this->setStyleSheet("background-color: white;");
+        QPalette background = palette();
+        background.setColor(QPalette::Window, Qt::white);
+        this->setPalette(background);
     }
 }
 
@@ -120,8 +122,11 @@ void MainWindow::on_greenBox_stateChanged(int arg1)
         ui->redBox->setChecked(false);
         ui->blueBox->setChecked(false);
         ui->resetBox->setChecked(false);
-        this->setStyleSheet("background-color: green;");
+        QPalette background = palette();
+        background.setColor(QPalette::Window, Qt::green);
+        this->setPalette(background);
     }
+    windowColour();
 }
 
 
@@ -133,8 +138,11 @@ void MainWindow::on_blueBox_stateChanged(int arg1)
         ui->redBox->setChecked(false);
         ui->greenBox->setChecked(false);
         ui->resetBox->setChecked(false);
-        this->setStyleSheet("background-color: blue;");
+        QPalette background = palette();
+        background.setColor(QPalette::Window, Qt::blue);
+        this->setPalette(background);
     }
+    windowColour();
 }
 
 
@@ -146,8 +154,11 @@ void MainWindow::on_redBox_stateChanged(int arg1)
         ui->blueBox->setChecked(false);
         ui->greenBox->setChecked(false);
         ui->resetBox->setChecked(false);
-        this->setStyleSheet("background-color: red;");
+        QPalette background = palette();
+        background.setColor(QPalette::Window, Qt::red);
+        this->setPalette(background);
     }
+    windowColour();
 }
 
 
@@ -159,8 +170,8 @@ void MainWindow::on_resetBox_stateChanged(int arg1)
         ui->blueBox->setChecked(false);
         ui->greenBox->setChecked(false);
         ui->redBox->setChecked(false);
-        windowColour();
     }
+    windowColour();
 }
 
 
@@ -171,17 +182,24 @@ void MainWindow::on_purpleBox_stateChanged(int arg1) {
         ui->blueBox->setChecked(false);
         ui->greenBox->setChecked(false);
         ui->resetBox->setChecked(false);
-        this->setStyleSheet("background-color: purple;");
+        QPalette background = palette();
+        background.setColor(QPalette::Window, Qt::darkMagenta);
+        this->setPalette(background);
     }
+    windowColour();
 }
 
 void MainWindow::on_orangeBox_stateChanged(int arg1) {
+    QColor orange = QColor(255, 165, 0);
     if (ui->orangeBox->isChecked()) {
         ui->purpleBox->setChecked(false);
         ui->redBox->setChecked(false);
         ui->blueBox->setChecked(false);
         ui->greenBox->setChecked(false);
         ui->resetBox->setChecked(false);
-        this->setStyleSheet("background-color: orange;");
+        QPalette background = palette();
+        background.setColor(QPalette::Window, orange);
+        this->setPalette(background);
     }
+    windowColour();
 }

@@ -35,7 +35,6 @@ class Ui_MainWindow
 public:
     QAction *actionExit;
     QWidget *centralwidget;
-    QLabel *label_2;
     QWidget *verticalLayoutWidget;
     QVBoxLayout *verticalLayout;
     QGridLayout *gridLayout;
@@ -58,7 +57,10 @@ public:
     QGridLayout *gridLayout_8;
     QLabel *label_7;
     QSlider *verticalSlider;
-    QWidget *gridLayoutWidget_2;
+    QWidget *gridLayoutWidget_3;
+    QGridLayout *gridLayout_5;
+    QHBoxLayout *horizontalLayout_2;
+    QLabel *label_2;
     QGridLayout *gridLayout_4;
     QCheckBox *redBox;
     QCheckBox *greenBox;
@@ -75,22 +77,16 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(810, 810);
-        MainWindow->setMinimumSize(QSize(810, 810));
-        MainWindow->setMaximumSize(QSize(810, 810));
+        MainWindow->resize(810, 707);
+        MainWindow->setMinimumSize(QSize(810, 707));
+        MainWindow->setMaximumSize(QSize(810, 707));
         actionExit = new QAction(MainWindow);
         actionExit->setObjectName("actionExit");
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
-        label_2 = new QLabel(centralwidget);
-        label_2->setObjectName("label_2");
-        label_2->setGeometry(QRect(11, 11, 211, 91));
-        QFont font;
-        font.setPointSize(30);
-        label_2->setFont(font);
         verticalLayoutWidget = new QWidget(centralwidget);
         verticalLayoutWidget->setObjectName("verticalLayoutWidget");
-        verticalLayoutWidget->setGeometry(QRect(10, 350, 631, 411));
+        verticalLayoutWidget->setGeometry(QRect(10, 240, 631, 411));
         verticalLayout = new QVBoxLayout(verticalLayoutWidget);
         verticalLayout->setObjectName("verticalLayout");
         verticalLayout->setContentsMargins(0, 0, 0, 0);
@@ -177,7 +173,7 @@ public:
 
         gridLayoutWidget = new QWidget(centralwidget);
         gridLayoutWidget->setObjectName("gridLayoutWidget");
-        gridLayoutWidget->setGeometry(QRect(650, 350, 160, 411));
+        gridLayoutWidget->setGeometry(QRect(650, 240, 160, 411));
         gridLayout_8 = new QGridLayout(gridLayoutWidget);
         gridLayout_8->setObjectName("gridLayout_8");
         gridLayout_8->setContentsMargins(0, 0, 0, 0);
@@ -194,30 +190,43 @@ public:
 
         gridLayout_8->addWidget(verticalSlider, 1, 0, 1, 1, Qt::AlignHCenter);
 
-        gridLayoutWidget_2 = new QWidget(centralwidget);
-        gridLayoutWidget_2->setObjectName("gridLayoutWidget_2");
-        gridLayoutWidget_2->setGeometry(QRect(480, 180, 321, 161));
-        gridLayout_4 = new QGridLayout(gridLayoutWidget_2);
+        gridLayoutWidget_3 = new QWidget(centralwidget);
+        gridLayoutWidget_3->setObjectName("gridLayoutWidget_3");
+        gridLayoutWidget_3->setGeometry(QRect(10, 9, 791, 211));
+        gridLayout_5 = new QGridLayout(gridLayoutWidget_3);
+        gridLayout_5->setObjectName("gridLayout_5");
+        gridLayout_5->setContentsMargins(0, 0, 0, 0);
+        horizontalLayout_2 = new QHBoxLayout();
+        horizontalLayout_2->setObjectName("horizontalLayout_2");
+        label_2 = new QLabel(gridLayoutWidget_3);
+        label_2->setObjectName("label_2");
+        QFont font;
+        font.setFamilies({QString::fromUtf8("Tw Cen MT Condensed Extra Bold")});
+        font.setPointSize(50);
+        label_2->setFont(font);
+
+        horizontalLayout_2->addWidget(label_2, 0, Qt::AlignHCenter);
+
+        gridLayout_4 = new QGridLayout();
         gridLayout_4->setObjectName("gridLayout_4");
-        gridLayout_4->setContentsMargins(0, 0, 0, 0);
-        redBox = new QCheckBox(gridLayoutWidget_2);
+        redBox = new QCheckBox(gridLayoutWidget_3);
         redBox->setObjectName("redBox");
 
         gridLayout_4->addWidget(redBox, 0, 0, 1, 1);
 
-        greenBox = new QCheckBox(gridLayoutWidget_2);
+        greenBox = new QCheckBox(gridLayoutWidget_3);
         greenBox->setObjectName("greenBox");
 
         gridLayout_4->addWidget(greenBox, 2, 0, 1, 1);
 
-        blueBox = new QCheckBox(gridLayoutWidget_2);
+        blueBox = new QCheckBox(gridLayoutWidget_3);
         blueBox->setObjectName("blueBox");
 
         gridLayout_4->addWidget(blueBox, 1, 0, 1, 1);
 
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName("horizontalLayout");
-        purpleBox = new QCheckBox(gridLayoutWidget_2);
+        purpleBox = new QCheckBox(gridLayoutWidget_3);
         purpleBox->setObjectName("purpleBox");
 
         horizontalLayout->addWidget(purpleBox);
@@ -225,15 +234,21 @@ public:
 
         gridLayout_4->addLayout(horizontalLayout, 1, 1, 1, 1);
 
-        resetBox = new QCheckBox(gridLayoutWidget_2);
+        resetBox = new QCheckBox(gridLayoutWidget_3);
         resetBox->setObjectName("resetBox");
 
         gridLayout_4->addWidget(resetBox, 0, 1, 1, 1);
 
-        orangeBox = new QCheckBox(gridLayoutWidget_2);
+        orangeBox = new QCheckBox(gridLayoutWidget_3);
         orangeBox->setObjectName("orangeBox");
 
         gridLayout_4->addWidget(orangeBox, 2, 1, 1, 1);
+
+
+        horizontalLayout_2->addLayout(gridLayout_4);
+
+
+        gridLayout_5->addLayout(horizontalLayout_2, 0, 0, 1, 1);
 
         MainWindow->setCentralWidget(centralwidget);
         statusbar = new QStatusBar(MainWindow);
@@ -258,7 +273,6 @@ public:
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
         actionExit->setText(QCoreApplication::translate("MainWindow", "Exit", nullptr));
-        label_2->setText(QCoreApplication::translate("MainWindow", "Craigslist", nullptr));
         radioButton_4->setText(QCoreApplication::translate("MainWindow", "Hard", nullptr));
         radioButton_3->setText(QCoreApplication::translate("MainWindow", "Medium", nullptr));
         radioButton_2->setText(QCoreApplication::translate("MainWindow", "Easy", nullptr));
@@ -268,6 +282,7 @@ public:
         label_3->setText(QCoreApplication::translate("MainWindow", "Recipe List", nullptr));
         label_5->setText(QCoreApplication::translate("MainWindow", "Ingredients", nullptr));
         label_7->setText(QCoreApplication::translate("MainWindow", "Gradient Slider", nullptr));
+        label_2->setText(QCoreApplication::translate("MainWindow", "Craigslist", nullptr));
         redBox->setText(QCoreApplication::translate("MainWindow", "Red", nullptr));
         greenBox->setText(QCoreApplication::translate("MainWindow", "Green", nullptr));
         blueBox->setText(QCoreApplication::translate("MainWindow", "Blue", nullptr));

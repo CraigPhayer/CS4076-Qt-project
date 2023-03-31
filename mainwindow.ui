@@ -7,48 +7,30 @@
     <x>0</x>
     <y>0</y>
     <width>810</width>
-    <height>810</height>
+    <height>707</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
     <width>810</width>
-    <height>810</height>
+    <height>707</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
     <width>810</width>
-    <height>810</height>
+    <height>707</height>
    </size>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLabel" name="label_2">
-    <property name="geometry">
-     <rect>
-      <x>11</x>
-      <y>11</y>
-      <width>211</width>
-      <height>91</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>30</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>Craigslist</string>
-    </property>
-   </widget>
    <widget class="QWidget" name="verticalLayoutWidget">
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>350</y>
+      <y>240</y>
       <width>631</width>
       <height>411</height>
      </rect>
@@ -152,7 +134,7 @@
     <property name="geometry">
      <rect>
       <x>650</x>
-      <y>350</y>
+      <y>240</y>
       <width>160</width>
       <height>411</height>
      </rect>
@@ -180,61 +162,82 @@
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="gridLayoutWidget_2">
+   <widget class="QWidget" name="gridLayoutWidget_3">
     <property name="geometry">
      <rect>
-      <x>480</x>
-      <y>180</y>
-      <width>321</width>
-      <height>161</height>
+      <x>10</x>
+      <y>9</y>
+      <width>791</width>
+      <height>211</height>
      </rect>
     </property>
-    <layout class="QGridLayout" name="gridLayout_4">
+    <layout class="QGridLayout" name="gridLayout_5">
      <item row="0" column="0">
-      <widget class="QCheckBox" name="redBox">
-       <property name="text">
-        <string>Red</string>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="0">
-      <widget class="QCheckBox" name="greenBox">
-       <property name="text">
-        <string>Green</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="0">
-      <widget class="QCheckBox" name="blueBox">
-       <property name="text">
-        <string>Blue</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="1">
-      <layout class="QHBoxLayout" name="horizontalLayout">
-       <item>
-        <widget class="QCheckBox" name="purpleBox">
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item alignment="Qt::AlignHCenter">
+        <widget class="QLabel" name="label_2">
+         <property name="font">
+          <font>
+           <family>Tw Cen MT Condensed Extra Bold</family>
+           <pointsize>50</pointsize>
+          </font>
+         </property>
          <property name="text">
-          <string>Purple</string>
+          <string>Craigslist</string>
          </property>
         </widget>
        </item>
+       <item>
+        <layout class="QGridLayout" name="gridLayout_4">
+         <item row="0" column="0">
+          <widget class="QCheckBox" name="redBox">
+           <property name="text">
+            <string>Red</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QCheckBox" name="greenBox">
+           <property name="text">
+            <string>Green</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QCheckBox" name="blueBox">
+           <property name="text">
+            <string>Blue</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <layout class="QHBoxLayout" name="horizontalLayout">
+           <item>
+            <widget class="QCheckBox" name="purpleBox">
+             <property name="text">
+              <string>Purple</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item row="0" column="1">
+          <widget class="QCheckBox" name="resetBox">
+           <property name="text">
+            <string>Gradient</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QCheckBox" name="orangeBox">
+           <property name="text">
+            <string>Orange</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
       </layout>
-     </item>
-     <item row="0" column="1">
-      <widget class="QCheckBox" name="resetBox">
-       <property name="text">
-        <string>Gradient</string>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="1">
-      <widget class="QCheckBox" name="orangeBox">
-       <property name="text">
-        <string>Orange</string>
-       </property>
-      </widget>
      </item>
     </layout>
    </widget>
