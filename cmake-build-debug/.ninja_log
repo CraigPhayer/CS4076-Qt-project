@@ -1,90 +1,32 @@
 # ninja log v5
-14	512	7019476010579752	RecipeBook_autogen/timestamp	5d91dd2c197b61d5
-14	512	7019476010579752	RecipeBook_autogen/mocs_compilation.cpp	5d91dd2c197b61d5
-1063	1703	7018301975894248	CMakeFiles/RecipeBook.dir/Food.cpp.obj	f1f54aeeb949d55e
-3272	3554	7019476040974236	RecipeBook.exe	6af676e355a0c5c1
-14	512	7019476010579752	C:/Users/sophi/OneDrive - University of Limerick/Uni stuff/C++/CS4076 Prj/RecipeBook/cmake-build-debug/RecipeBook_autogen/mocs_compilation.cpp	5d91dd2c197b61d5
-14	512	7019476010579752	C:/Users/sophi/OneDrive - University of Limerick/Uni stuff/C++/CS4076 Prj/RecipeBook/cmake-build-debug/RecipeBook_autogen/timestamp	5d91dd2c197b61d5
-533	3271	7019476038163523	CMakeFiles/RecipeBook.dir/mainwindow.cpp.obj	950a88122ca1954d
-1192	3282	7019460034309993	CMakeFiles/RecipeBook.dir/RecipeBook_autogen/mocs_compilation.cpp.obj	5a9b402f32091be8
-1189	3297	7019460034460028	CMakeFiles/RecipeBook.dir/main.cpp.obj	ee4e37eb53617772
-1088	1485	7018191613359421	CMakeFiles/RecipeBook.dir/Ingredients.cpp.obj	d1f7dc6f6c978018
+15	375	7019643869791163	RecipeBook_autogen/timestamp	5d91dd2c197b61d5
+15	375	7019643869791163	RecipeBook_autogen/mocs_compilation.cpp	5d91dd2c197b61d5
+1551	2476	7019580900000807	CMakeFiles/RecipeBook.dir/Food.cpp.obj	f1f54aeeb949d55e
+2852	3141	7019643897372482	RecipeBook.exe	6af676e355a0c5c1
+15	375	7019643869791163	C:/Users/sophi/OneDrive - University of Limerick/Uni stuff/C++/CS4076 Prj/RecipeBook/cmake-build-debug/RecipeBook_autogen/mocs_compilation.cpp	5d91dd2c197b61d5
+15	375	7019643869791163	C:/Users/sophi/OneDrive - University of Limerick/Uni stuff/C++/CS4076 Prj/RecipeBook/cmake-build-debug/RecipeBook_autogen/timestamp	5d91dd2c197b61d5
+389	2852	7019643894536837	CMakeFiles/RecipeBook.dir/mainwindow.cpp.obj	950a88122ca1954d
+1537	4297	7019580918204890	CMakeFiles/RecipeBook.dir/RecipeBook_autogen/mocs_compilation.cpp.obj	5a9b402f32091be8
+1544	4356	7019580918805031	CMakeFiles/RecipeBook.dir/main.cpp.obj	ee4e37eb53617772
+1561	2156	7019580896710070	CMakeFiles/RecipeBook.dir/Ingredients.cpp.obj	d1f7dc6f6c978018
 1121	1524	7018996971850919	CMakeFiles/RecipeBook.dir/Utility.cpp.obj	8c18eec2864934ad
-1519	2966	7019015822980568	CMakeFiles/RecipeBook.dir/Recipe.cpp.obj	1041119c7fa7bcf1
+1567	2826	7019580903491603	CMakeFiles/RecipeBook.dir/Recipe.cpp.obj	1041119c7fa7bcf1
 350	643	7017242923514811	CMakeFiles/RecipeBook.dir/error404.cpp.obj	7d88c4bdfce52b2d
-21	371	7019481669010841	RecipeBook_autogen/timestamp	5d91dd2c197b61d5
-21	371	7019481669010841	RecipeBook_autogen/mocs_compilation.cpp	5d91dd2c197b61d5
-21	371	7019481669010841	C:/Users/sophi/OneDrive - University of Limerick/Uni stuff/C++/CS4076 Prj/RecipeBook/cmake-build-debug/RecipeBook_autogen/timestamp	5d91dd2c197b61d5
-21	371	7019481669010841	C:/Users/sophi/OneDrive - University of Limerick/Uni stuff/C++/CS4076 Prj/RecipeBook/cmake-build-debug/RecipeBook_autogen/mocs_compilation.cpp	5d91dd2c197b61d5
-386	2764	7019481692813376	CMakeFiles/RecipeBook.dir/mainwindow.cpp.obj	950a88122ca1954d
-2765	3024	7019481695485399	RecipeBook.exe	6af676e355a0c5c1
-22	580	7019483973273181	RecipeBook_autogen/timestamp	5d91dd2c197b61d5
-22	580	7019483973273181	RecipeBook_autogen/mocs_compilation.cpp	5d91dd2c197b61d5
-22	580	7019483973273181	C:/Users/sophi/OneDrive - University of Limerick/Uni stuff/C++/CS4076 Prj/RecipeBook/cmake-build-debug/RecipeBook_autogen/timestamp	5d91dd2c197b61d5
-22	580	7019483973273181	C:/Users/sophi/OneDrive - University of Limerick/Uni stuff/C++/CS4076 Prj/RecipeBook/cmake-build-debug/RecipeBook_autogen/mocs_compilation.cpp	5d91dd2c197b61d5
-595	2997	7019483997455577	CMakeFiles/RecipeBook.dir/mainwindow.cpp.obj	950a88122ca1954d
-2997	3258	7019484000036768	RecipeBook.exe	6af676e355a0c5c1
-18	1233	7019494375710890	RecipeBook_autogen/timestamp	5d91dd2c197b61d5
-18	1233	7019494375710890	RecipeBook_autogen/mocs_compilation.cpp	5d91dd2c197b61d5
-18	1233	7019494375710890	C:/Users/sophi/OneDrive - University of Limerick/Uni stuff/C++/CS4076 Prj/RecipeBook/cmake-build-debug/RecipeBook_autogen/timestamp	5d91dd2c197b61d5
-18	1233	7019494375710890	C:/Users/sophi/OneDrive - University of Limerick/Uni stuff/C++/CS4076 Prj/RecipeBook/cmake-build-debug/RecipeBook_autogen/mocs_compilation.cpp	5d91dd2c197b61d5
-1235	3465	7019494400667386	CMakeFiles/RecipeBook.dir/main.cpp.obj	ee4e37eb53617772
-1241	3469	7019494400707396	CMakeFiles/RecipeBook.dir/RecipeBook_autogen/mocs_compilation.cpp.obj	5a9b402f32091be8
-1245	3871	7019494404728412	CMakeFiles/RecipeBook.dir/mainwindow.cpp.obj	950a88122ca1954d
-3871	4163	7019494407609069	RecipeBook.exe	6af676e355a0c5c1
-13	435	7019494701512158	RecipeBook_autogen/timestamp	5d91dd2c197b61d5
-13	435	7019494701512158	RecipeBook_autogen/mocs_compilation.cpp	5d91dd2c197b61d5
-13	435	7019494701512158	C:/Users/sophi/OneDrive - University of Limerick/Uni stuff/C++/CS4076 Prj/RecipeBook/cmake-build-debug/RecipeBook_autogen/timestamp	5d91dd2c197b61d5
-13	435	7019494701512158	C:/Users/sophi/OneDrive - University of Limerick/Uni stuff/C++/CS4076 Prj/RecipeBook/cmake-build-debug/RecipeBook_autogen/mocs_compilation.cpp	5d91dd2c197b61d5
-454	2724	7019494724387210	CMakeFiles/RecipeBook.dir/mainwindow.cpp.obj	950a88122ca1954d
-2724	2973	7019494726837836	RecipeBook.exe	6af676e355a0c5c1
-25	540	7019495723468706	RecipeBook_autogen/timestamp	5d91dd2c197b61d5
-25	540	7019495723468706	RecipeBook_autogen/mocs_compilation.cpp	5d91dd2c197b61d5
-25	540	7019495723468706	C:/Users/sophi/OneDrive - University of Limerick/Uni stuff/C++/CS4076 Prj/RecipeBook/cmake-build-debug/RecipeBook_autogen/timestamp	5d91dd2c197b61d5
-25	540	7019495723468706	C:/Users/sophi/OneDrive - University of Limerick/Uni stuff/C++/CS4076 Prj/RecipeBook/cmake-build-debug/RecipeBook_autogen/mocs_compilation.cpp	5d91dd2c197b61d5
-572	1374	7019495731833997	CMakeFiles/RecipeBook.dir/Recipe.cpp.obj	1041119c7fa7bcf1
-567	3090	7019495748987944	CMakeFiles/RecipeBook.dir/mainwindow.cpp.obj	950a88122ca1954d
-3090	3358	7019495751618544	RecipeBook.exe	6af676e355a0c5c1
-16	589	7019503684646451	RecipeBook_autogen/timestamp	5d91dd2c197b61d5
-16	589	7019503684646451	RecipeBook_autogen/mocs_compilation.cpp	5d91dd2c197b61d5
-16	589	7019503684646451	C:/Users/sophi/OneDrive - University of Limerick/Uni stuff/C++/CS4076 Prj/RecipeBook/cmake-build-debug/RecipeBook_autogen/timestamp	5d91dd2c197b61d5
-16	589	7019503684646451	C:/Users/sophi/OneDrive - University of Limerick/Uni stuff/C++/CS4076 Prj/RecipeBook/cmake-build-debug/RecipeBook_autogen/mocs_compilation.cpp	5d91dd2c197b61d5
-610	1491	7019503693648387	CMakeFiles/RecipeBook.dir/Recipe.cpp.obj	1041119c7fa7bcf1
-604	3090	7019503709638754	CMakeFiles/RecipeBook.dir/mainwindow.cpp.obj	950a88122ca1954d
-3090	3414	7019503712839405	RecipeBook.exe	6af676e355a0c5c1
-6	359	7019506923994409	RecipeBook_autogen/timestamp	5d91dd2c197b61d5
-6	359	7019506923994409	RecipeBook_autogen/mocs_compilation.cpp	5d91dd2c197b61d5
-6	359	7019506923994409	C:/Users/sophi/OneDrive - University of Limerick/Uni stuff/C++/CS4076 Prj/RecipeBook/cmake-build-debug/RecipeBook_autogen/timestamp	5d91dd2c197b61d5
-6	359	7019506923994409	C:/Users/sophi/OneDrive - University of Limerick/Uni stuff/C++/CS4076 Prj/RecipeBook/cmake-build-debug/RecipeBook_autogen/mocs_compilation.cpp	5d91dd2c197b61d5
-376	2739	7019506947785140	CMakeFiles/RecipeBook.dir/mainwindow.cpp.obj	950a88122ca1954d
-2740	3005	7019506950385706	RecipeBook.exe	6af676e355a0c5c1
-14	358	7019508935934150	RecipeBook_autogen/timestamp	5d91dd2c197b61d5
-14	358	7019508935934150	RecipeBook_autogen/mocs_compilation.cpp	5d91dd2c197b61d5
-14	358	7019508935934150	C:/Users/sophi/OneDrive - University of Limerick/Uni stuff/C++/CS4076 Prj/RecipeBook/cmake-build-debug/RecipeBook_autogen/timestamp	5d91dd2c197b61d5
-14	358	7019508935934150	C:/Users/sophi/OneDrive - University of Limerick/Uni stuff/C++/CS4076 Prj/RecipeBook/cmake-build-debug/RecipeBook_autogen/mocs_compilation.cpp	5d91dd2c197b61d5
-373	2786	7019508960190000	CMakeFiles/RecipeBook.dir/mainwindow.cpp.obj	950a88122ca1954d
-2787	3259	7019508964872079	RecipeBook.exe	6af676e355a0c5c1
-15	369	7019510971755074	RecipeBook_autogen/timestamp	5d91dd2c197b61d5
-15	369	7019510971755074	RecipeBook_autogen/mocs_compilation.cpp	5d91dd2c197b61d5
-15	369	7019510971755074	C:/Users/sophi/OneDrive - University of Limerick/Uni stuff/C++/CS4076 Prj/RecipeBook/cmake-build-debug/RecipeBook_autogen/timestamp	5d91dd2c197b61d5
-15	369	7019510971755074	C:/Users/sophi/OneDrive - University of Limerick/Uni stuff/C++/CS4076 Prj/RecipeBook/cmake-build-debug/RecipeBook_autogen/mocs_compilation.cpp	5d91dd2c197b61d5
-386	2863	7019510996660737	CMakeFiles/RecipeBook.dir/mainwindow.cpp.obj	950a88122ca1954d
-2864	3188	7019510999870681	RecipeBook.exe	6af676e355a0c5c1
-12	392	7019512569588970	RecipeBook_autogen/timestamp	5d91dd2c197b61d5
-12	392	7019512569588970	RecipeBook_autogen/mocs_compilation.cpp	5d91dd2c197b61d5
-12	392	7019512569588970	C:/Users/sophi/OneDrive - University of Limerick/Uni stuff/C++/CS4076 Prj/RecipeBook/cmake-build-debug/RecipeBook_autogen/timestamp	5d91dd2c197b61d5
-12	392	7019512569588970	C:/Users/sophi/OneDrive - University of Limerick/Uni stuff/C++/CS4076 Prj/RecipeBook/cmake-build-debug/RecipeBook_autogen/mocs_compilation.cpp	5d91dd2c197b61d5
-407	2875	7019512594421441	CMakeFiles/RecipeBook.dir/mainwindow.cpp.obj	950a88122ca1954d
-2876	3163	7019512597237424	RecipeBook.exe	6af676e355a0c5c1
-13	359	7019514572637946	RecipeBook_autogen/timestamp	5d91dd2c197b61d5
-13	359	7019514572637946	RecipeBook_autogen/mocs_compilation.cpp	5d91dd2c197b61d5
-13	359	7019514572637946	C:/Users/sophi/OneDrive - University of Limerick/Uni stuff/C++/CS4076 Prj/RecipeBook/cmake-build-debug/RecipeBook_autogen/timestamp	5d91dd2c197b61d5
-13	359	7019514572637946	C:/Users/sophi/OneDrive - University of Limerick/Uni stuff/C++/CS4076 Prj/RecipeBook/cmake-build-debug/RecipeBook_autogen/mocs_compilation.cpp	5d91dd2c197b61d5
-374	2729	7019514596333764	CMakeFiles/RecipeBook.dir/mainwindow.cpp.obj	950a88122ca1954d
-2730	3015	7019514599154540	RecipeBook.exe	6af676e355a0c5c1
-11	354	7019515017587537	RecipeBook_autogen/timestamp	5d91dd2c197b61d5
-11	354	7019515017587537	RecipeBook_autogen/mocs_compilation.cpp	5d91dd2c197b61d5
-11	354	7019515017587537	C:/Users/sophi/OneDrive - University of Limerick/Uni stuff/C++/CS4076 Prj/RecipeBook/cmake-build-debug/RecipeBook_autogen/timestamp	5d91dd2c197b61d5
-11	354	7019515017587537	C:/Users/sophi/OneDrive - University of Limerick/Uni stuff/C++/CS4076 Prj/RecipeBook/cmake-build-debug/RecipeBook_autogen/mocs_compilation.cpp	5d91dd2c197b61d5
-369	2692	7019515040942991	CMakeFiles/RecipeBook.dir/mainwindow.cpp.obj	950a88122ca1954d
-2692	2976	7019515043693608	RecipeBook.exe	6af676e355a0c5c1
+13	353	7019648878930022	RecipeBook_autogen/timestamp	5d91dd2c197b61d5
+13	353	7019648878930022	RecipeBook_autogen/mocs_compilation.cpp	5d91dd2c197b61d5
+13	353	7019648878930022	C:/Users/sophi/OneDrive - University of Limerick/Uni stuff/C++/CS4076 Prj/RecipeBook/cmake-build-debug/RecipeBook_autogen/timestamp	5d91dd2c197b61d5
+13	353	7019648878930022	C:/Users/sophi/OneDrive - University of Limerick/Uni stuff/C++/CS4076 Prj/RecipeBook/cmake-build-debug/RecipeBook_autogen/mocs_compilation.cpp	5d91dd2c197b61d5
+366	2728	7019648902752890	CMakeFiles/RecipeBook.dir/mainwindow.cpp.obj	950a88122ca1954d
+2728	3054	7019648905963797	RecipeBook.exe	6af676e355a0c5c1
+20	463	7019650070084355	RecipeBook_autogen/timestamp	5d91dd2c197b61d5
+20	463	7019650070084355	RecipeBook_autogen/mocs_compilation.cpp	5d91dd2c197b61d5
+20	463	7019650070084355	C:/Users/sophi/OneDrive - University of Limerick/Uni stuff/C++/CS4076 Prj/RecipeBook/cmake-build-debug/RecipeBook_autogen/timestamp	5d91dd2c197b61d5
+20	463	7019650070084355	C:/Users/sophi/OneDrive - University of Limerick/Uni stuff/C++/CS4076 Prj/RecipeBook/cmake-build-debug/RecipeBook_autogen/mocs_compilation.cpp	5d91dd2c197b61d5
+479	2888	7019650094298204	CMakeFiles/RecipeBook.dir/mainwindow.cpp.obj	950a88122ca1954d
+2888	3149	7019650096908776	RecipeBook.exe	6af676e355a0c5c1
+18	483	7019650441647385	RecipeBook_autogen/timestamp	5d91dd2c197b61d5
+18	483	7019650441647385	RecipeBook_autogen/mocs_compilation.cpp	5d91dd2c197b61d5
+18	483	7019650441647385	C:/Users/sophi/OneDrive - University of Limerick/Uni stuff/C++/CS4076 Prj/RecipeBook/cmake-build-debug/RecipeBook_autogen/timestamp	5d91dd2c197b61d5
+18	483	7019650441647385	C:/Users/sophi/OneDrive - University of Limerick/Uni stuff/C++/CS4076 Prj/RecipeBook/cmake-build-debug/RecipeBook_autogen/mocs_compilation.cpp	5d91dd2c197b61d5
+501	2828	7019650465087699	CMakeFiles/RecipeBook.dir/mainwindow.cpp.obj	950a88122ca1954d
+2831	3121	7019650467969293	RecipeBook.exe	6af676e355a0c5c1

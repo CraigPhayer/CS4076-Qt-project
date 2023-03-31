@@ -69,7 +69,7 @@ const Food &Recipe::getFood() {
 string Recipe::getIngredients() {
     ostringstream returnIngredient;
     string temp;
-    for (const Ingredients &i: Food::getIngredients()) {
+    for (const Ingredients &i: Food::getIngredientsVector()) {
         returnIngredient << i.getIngredName() << endl;
     }
     temp = returnIngredient.str();

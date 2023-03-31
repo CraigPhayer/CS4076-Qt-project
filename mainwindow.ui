@@ -257,12 +257,18 @@
      <string>Menu</string>
     </property>
     <addaction name="actionExit"/>
+    <addaction name="actionGithub"/>
    </widget>
    <addaction name="menuMenu"/>
   </widget>
   <action name="actionExit">
    <property name="text">
     <string>Exit</string>
+   </property>
+  </action>
+  <action name="actionGithub">
+   <property name="text">
+    <string>Github</string>
    </property>
   </action>
  </widget>

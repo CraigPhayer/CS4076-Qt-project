@@ -34,6 +34,7 @@ class Ui_MainWindow
 {
 public:
     QAction *actionExit;
+    QAction *actionGithub;
     QWidget *centralwidget;
     QWidget *verticalLayoutWidget;
     QVBoxLayout *verticalLayout;
@@ -82,6 +83,8 @@ public:
         MainWindow->setMaximumSize(QSize(810, 707));
         actionExit = new QAction(MainWindow);
         actionExit->setObjectName("actionExit");
+        actionGithub = new QAction(MainWindow);
+        actionGithub->setObjectName("actionGithub");
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         verticalLayoutWidget = new QWidget(centralwidget);
@@ -263,6 +266,7 @@ public:
 
         menubar->addAction(menuMenu->menuAction());
         menuMenu->addAction(actionExit);
+        menuMenu->addAction(actionGithub);
 
         retranslateUi(MainWindow);
 
@@ -273,6 +277,7 @@ public:
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
         actionExit->setText(QCoreApplication::translate("MainWindow", "Exit", nullptr));
+        actionGithub->setText(QCoreApplication::translate("MainWindow", "Github", nullptr));
         radioButton_4->setText(QCoreApplication::translate("MainWindow", "Hard", nullptr));
         radioButton_3->setText(QCoreApplication::translate("MainWindow", "Medium", nullptr));
         radioButton_2->setText(QCoreApplication::translate("MainWindow", "Easy", nullptr));

@@ -36,6 +36,8 @@ public:
 private slots:
     void on_actionExit_triggered();
 
+    void on_actionGithub_triggered();
+
     void on_searchButton_clicked();
 
     void on_radioButton_4_clicked();//HARD

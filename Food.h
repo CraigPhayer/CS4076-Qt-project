@@ -22,7 +22,9 @@ public:
 
     ~Food();
 
-    static const vector<Ingredients> &getIngredients() ;
+    static const vector<Ingredients> &getIngredientsVector() ;
+
+    string getIngredients() const;
 };
 
 
