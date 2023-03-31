@@ -7,13 +7,12 @@ using namespace std;
 vector<string> Recipe::recipeList;
 vector<Recipe> Recipe::recipeVector;
 ostringstream returnRecipe;
-string Recipe::instructionsGlobal;
+/*int Recipe::instructionsGlobal;*/
 
 
 Recipe::Recipe(const string &name, const Food &food, const string &difficulty, const int &n, const string &instructions)
         : name(name), food(food), difficulty(difficulty),
-          instructionsSteps(n), instructions(instructions) {
-    appendInstructions(instructions,n);
+          n(n), instructionsSteps(n), instructions(instructions) {
 }
 
 void Recipe::addToList(const Recipe &recipe) {
@@ -78,7 +77,7 @@ string Recipe::getIngredients() {
 
 Recipe::Recipe() = default;
 
-void Recipe::appendInstructions(const string &input, int n) {
+string Recipe::appendInstructions(const string &input, int n) {
     string::size_type pos = 0;
     string output;
     for (int i = 0; i < n; ++i) {
@@ -96,7 +95,7 @@ void Recipe::appendInstructions(const string &input, int n) {
             pos = 0;
         output += "\n";
     }
-    instructionsGlobal = output;
+    return output;
 }
 
 int Recipe::getInstructions() const {

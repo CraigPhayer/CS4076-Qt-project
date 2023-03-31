@@ -10,10 +10,9 @@ using namespace std;
 
 class Food {
 protected:
-    static vector<Ingredients> ingredients;
     string name;
-
 public:
+    static vector<Ingredients> ingredients;
     Food(const string &name, const vector<Ingredients> &ingredients1);
 
     Food(const string &name);
@@ -24,7 +23,9 @@ public:
 
     static const vector<Ingredients> &getIngredientsVector() ;
 
-    string getIngredients() const;
+    static string getIngredients() ;
+
+    static const vector<string> &getIngredientsList();
 };
 
 

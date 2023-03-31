@@ -66,7 +66,7 @@ private:
     string formatString(const string &str) override;
 protected:
 
-    string searchList(const string& str, const vector<string> &vectorS) override;
+    int searchList(const string& str, const vector<string> &vectorS) override;
 };
 
 #endif // MAINWINDOW_H

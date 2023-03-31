@@ -20,12 +20,14 @@ protected:
 
     string instructions;
 
-    static string instructionsGlobal;
+    int instructionsGlobal;
 
     friend class MainWindow;
 
 public:
     static vector<string> recipeList;
+
+    int n;
 
     static vector<Recipe> recipeVector;
 
@@ -45,6 +47,8 @@ public:
 
     static const vector<string> &getRecipeList();
 
+
+
     static string getRecipeNameList();
 
     int getInstructions() const;
@@ -57,7 +61,7 @@ public:
 
     Recipe();
 
-    void appendInstructions(const string &input, int n);
+    static string appendInstructions(const string &input, int n);
 };
 
 

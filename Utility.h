@@ -11,7 +11,7 @@ public:
 
     virtual ~Utility() = default;
 
-    virtual T searchList(const T& t, const vector<T> &vectorT) = 0;
+    virtual int searchList(const T& t, const vector<T> &vectorT) = 0;
 
     virtual T formatString(const T &str);
 };

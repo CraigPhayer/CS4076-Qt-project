@@ -16,7 +16,6 @@
 
 Food temp = *new Food();
 Recipe r = *new Recipe();
-Ingredients i = *new Ingredients();
 
 error404 e = *new error404("Recipe was not found or doesn't exist");
 
@@ -30,8 +29,7 @@ MainWindow::~MainWindow() {
     delete ui;
 }
 
-void MainWindow::on_actionGithub_triggered()
-{
+void MainWindow::on_actionGithub_triggered() {
     QUrl url("https://github.com/CraigPhayer/CS4076-Qt-project");
     QDesktopServices::openUrl(url);
 }
@@ -42,20 +40,31 @@ void MainWindow::on_actionExit_triggered() {
 
 void MainWindow::on_searchButton_clicked() {
     try {
-        searchList(ui->lineEdit->text().toStdString(), Recipe::getRecipeList());
+
+        int i = searchList(ui->lineEdit->text().toStdString(), Recipe::getRecipeList());
         ui->textBrowser->clear();
-        ui->textBrowser->setText(QString::fromStdString(r.instructionsGlobal));
+        string str1 = Recipe::recipeVector.at(i).getInstructionString();
+        ui->textBrowser->setText(QString::fromStdString(str1));
         ui->textBrowser_2->clear();
-        ui->textBrowser_2->setText(QString::fromStdString(r.getIngredients()));
+        ui->textBrowser_2->setText(QString::fromStdString(Food::ingredients.at(i).getIngredName()));
     } catch (error404 error) {
         ui->lineEdit->clear();
         QMessageBox::information(this, tr("Error 404"), tr("Recipe was not found or doesn't exist"));
     }
 }
 
-string MainWindow::searchList(const string &str, const vector<string> &vectorS) {
-    if (any_of(vectorS.begin(), vectorS.end(), compare(str))) {
-        return str;
+int MainWindow::searchList(const string &str, const vector<string> &vectorS) {
+    /*if (any_of(vectorS.begin(), vectorS.end(), compare(str))) {
+        return vectorS.;
+    }*/
+    /*auto iter = find_if(vectorS.begin(), vectorS.end(), compare(str));
+    if (iter == vectorS.end()) {
+        int index = distance(vectorS.begin(),iter);
+        return index;*/
+        for (int i = 0; i < vectorS.size(); ++i) {
+            if (compare(str)(vectorS[i])) {
+                return i;
+            }
     }
     throw e;
 }
@@ -64,8 +73,6 @@ string MainWindow::searchList(const string &str, const vector<string> &vectorS) 
 void MainWindow::on_radioButton_4_clicked()//HARD
 {
     ui->textBrowser->setText("");
-    ui->textBrowser_2->setText("");
-    ui->lineEdit->setText("");
     ui->textBrowser->setText(QString::fromStdString(Recipe::getDifficultyFromList(HARD)));
 }
 
@@ -73,16 +80,12 @@ void MainWindow::on_radioButton_4_clicked()//HARD
 void MainWindow::on_radioButton_3_clicked()//MEDIUM
 {
     ui->textBrowser->setText("");
-    ui->textBrowser_2->setText("");
-    ui->lineEdit->setText("");
     ui->textBrowser->setText(QString::fromStdString(Recipe::getDifficultyFromList(MEDIUM)));
 }
 
 void MainWindow::on_radioButton_2_clicked()//EASY
 {
     ui->textBrowser->setText("");
-    ui->textBrowser_2->setText("");
-    ui->lineEdit->setText("");
     ui->textBrowser->setText(QString::fromStdString(Recipe::getDifficultyFromList(EASY)));
 }
 
@@ -91,16 +94,17 @@ void MainWindow::setup() {
     /*Example, to be removed*/
     vector<Ingredients> tempV;
     string basicString = "pls. work. thank. you.";
+    basicString = Recipe::appendInstructions(basicString,4);
     Ingredients ingredients1 = *new Ingredients(basicString);
     tempV.push_back(ingredients1);
-    Food ingredients = *new Food("tempV", tempV);
+    Food ingredients = *new Food("Food", tempV);
     Recipe r = *new Recipe("Food", ingredients, "Hard", 4, basicString);
     r.addToList(r);
 
     vector<Ingredients> croissantsIngredients;
     Ingredients cross1 = *new Ingredients("500g all-purpose flour");
     Ingredients cross2 = cross1;
-    cross2.setIngredName("500g all-purpose flour.\n 10g salt. 80g sugar.\n 10g instant yeast.\n 300ml cold milk.\n 250g unsalted butter, at room temperature.\n 1 egg beaten with 1 tablespoon of water, for egg wash");
+    cross2.setIngredName("500g all-purpose flour.\n10g salt. 80g sugar. 10g instant yeast.\n300ml cold milk.\n250g unsalted butter, at room temperature.\n1 egg beaten with 1 tablespoon of water, for egg wash");
     string instructionsCross = "In a large mixing bowl, whisk together the flour, salt, sugar, and instant yeast."
                                " Add in the cold milk and mix until a dough forms."
                                " Knead the dough by hand for 10 minutes or use a stand mixer with a dough hook attachment for 5-7 minutes until the dough is smooth and elastic."
@@ -117,9 +121,10 @@ void MainWindow::setup() {
                                " Preheat the oven to 200°C. Brush the croissants with egg wash."
                                " Bake the croissants for 20-25 minutes, or until they are golden brown and flaky."
                                " Serve the croissants warm or at room temperature.";
+    instructionsCross = Recipe::appendInstructions(instructionsCross,17);
     croissantsIngredients.push_back(cross2);
-    Food crossIngred = *new Food("croissantsIngredients",croissantsIngredients);
-    Recipe Croissants = *new Recipe("Croissants",crossIngred.getIngredients(),"Hard",7, instructionsCross);
+    Food crossIngred = *new Food("Croissants", croissantsIngredients);
+    Recipe Croissants = *new Recipe("Croissants",crossIngred, "Hard", 17,instructionsCross);
     Croissants.addToList(Croissants);
 
     vector<Ingredients> ChickenP;
@@ -144,8 +149,9 @@ void MainWindow::setup() {
                                   "Bake in the preheated oven for 15-20 minutes, or until the cheese is melted and bubbly."
                                   "While the chicken is baking, cook the spaghetti according to package instructions."
                                   "To serve, place a chicken breast on a plate with some of the melted mozzarella cheese and marinara sauce. Serve with spaghetti on the side.";
+    instructionsChickenP = Recipe::appendInstructions(instructionsChickenP,9);
     Food chickP = *new Food("ChickenP",ChickenP);
-    Recipe chickenParmesan = *new Recipe("Chicken Parmesan",chickP.getIngredients(),"Medium",9,instructionsChickenP);
+    Recipe chickenParmesan = *new Recipe("Chicken Parmesan",chickP,"Medium",9,instructionsChickenP);
     chickenParmesan.addToList(chickenParmesan);
 
     vector<Ingredients> eggs;
@@ -160,19 +166,16 @@ void MainWindow::setup() {
                               "Using a spatula, gently scramble the eggs by stirring them around the skillet until they are cooked to your desired level of doneness."
                               "Season with additional salt and black pepper to taste."
                               "Serve the scrambled eggs hot with toast, bacon, or other breakfast sides of your choice.";
+    instructionsEggs = Recipe::appendInstructions(instructionsEggs,6);
     Food egg = *new Food("Scrambled eggs",eggs);
-    Recipe scrambledEggs = *new Recipe("Scrambled eggs",egg.getIngredients(),"Easy",6,instructionsEggs);
+    Recipe scrambledEggs = *new Recipe("Scrambled eggs",egg,"Easy",6,instructionsEggs);
     scrambledEggs.addToList(scrambledEggs);
-
-
-
 }
 
-void MainWindow::on_verticalSlider_valueChanged(int value)
-{
-    if(ui->resetBox->isChecked()){
+void MainWindow::on_verticalSlider_valueChanged(int value) {
+    if (ui->resetBox->isChecked()) {
         this->setStyleSheet("background-color: ;");
-        ui->verticalSlider->setRange(0,255);
+        ui->verticalSlider->setRange(0, 255);
         QColor color1(255 - value, value, 0);
         QColor color2(value, 0, 255 - value);
 
@@ -188,11 +191,12 @@ void MainWindow::on_verticalSlider_valueChanged(int value)
 }
 
 
-void MainWindow::windowColour(){
+void MainWindow::windowColour() {
 
-    if (!ui->redBox->isChecked() && !ui->resetBox->isChecked() && !ui->greenBox->isChecked() && !ui->blueBox->isChecked()
+    if (!ui->redBox->isChecked() && !ui->resetBox->isChecked() && !ui->greenBox->isChecked() &&
+        !ui->blueBox->isChecked()
         && !ui->purpleBox->isChecked()
-        && !ui->orangeBox->isChecked()){
+        && !ui->orangeBox->isChecked()) {
         QPalette background = palette();
         background.setColor(QPalette::Window, Qt::white);
         this->setPalette(background);
@@ -200,9 +204,8 @@ void MainWindow::windowColour(){
 }
 
 
-void MainWindow::on_greenBox_stateChanged(int arg1)
-{
-    if (ui->greenBox->isChecked()){
+void MainWindow::on_greenBox_stateChanged(int arg1) {
+    if (ui->greenBox->isChecked()) {
         ui->purpleBox->setChecked(false);
         ui->orangeBox->setChecked(false);
         ui->redBox->setChecked(false);
@@ -216,9 +219,8 @@ void MainWindow::on_greenBox_stateChanged(int arg1)
 }
 
 
-void MainWindow::on_blueBox_stateChanged(int arg1)
-{
-    if (ui->blueBox->isChecked()){
+void MainWindow::on_blueBox_stateChanged(int arg1) {
+    if (ui->blueBox->isChecked()) {
         ui->purpleBox->setChecked(false);
         ui->orangeBox->setChecked(false);
         ui->redBox->setChecked(false);
@@ -232,9 +234,8 @@ void MainWindow::on_blueBox_stateChanged(int arg1)
 }
 
 
-void MainWindow::on_redBox_stateChanged(int arg1)
-{
-    if (ui->redBox->isChecked()){
+void MainWindow::on_redBox_stateChanged(int arg1) {
+    if (ui->redBox->isChecked()) {
         ui->purpleBox->setChecked(false);
         ui->orangeBox->setChecked(false);
         ui->blueBox->setChecked(false);
@@ -248,9 +249,8 @@ void MainWindow::on_redBox_stateChanged(int arg1)
 }
 
 
-void MainWindow::on_resetBox_stateChanged(int arg1)
-{
-    if(ui->resetBox->isChecked()){
+void MainWindow::on_resetBox_stateChanged(int arg1) {
+    if (ui->resetBox->isChecked()) {
         ui->purpleBox->setChecked(false);
         ui->orangeBox->setChecked(false);
         ui->blueBox->setChecked(false);
@@ -294,9 +294,9 @@ string MainWindow::formatString(const string &str) {
 
     string::size_type pos = 0;
     for (int i = 0; i < str.length(); ++i) {
-        while (pos < str.length()){
+        while (pos < str.length()) {
             output += str[pos];
-            if (str[pos] == '.'){
+            if (str[pos] == '.') {
                 output += "\n";
                 ++pos;
                 break;
